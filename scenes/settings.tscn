@@ -261,26 +261,4 @@ popup/item_2/id = 2
 popup/item_3/text = "TAA"
 popup/item_3/id = 3
 
-[node name="Label3" type="Label" parent="." unique_id=1654563582]
-layout_mode = 0
-offset_left = 681.5
-offset_top = 182.5
-offset_right = 783.5
-offset_bottom = 217.5
-theme_override_font_sizes/font_size = 25
-text = "Quality"
-
-[node name="OptionButton2" type="OptionButton" parent="." unique_id=1543407773]
-layout_mode = 0
-offset_left = 792.5
-offset_top = 177.5
-offset_right = 950.5
-offset_bottom = 216.5
-item_count = 2
-popup/item_0/text = "Low"
-popup/item_0/id = 0
-popup/item_1/text = "High"
-popup/item_1/id = 1
-
 [connection signal="item_selected" from="OptionButton" to="." method="_on_option_button_item_selected"]
-[connection signal="item_selected" from="OptionButton2" to="." method="_on_option_button_2_item_selected"]
