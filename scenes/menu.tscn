@@ -1,0 +1,197 @@
+[gd_scene format=3 uid="uid://c7cd3p3uaswc5"]
+
+[ext_resource type="Texture2D" uid="uid://csexdwfut0gk4" path="res://StartBG.png" id="1_con2f"]
+[ext_resource type="Script" uid="uid://djychymaejbjo" path="res://scenes/menu.gd" id="1_mhnvy"]
+[ext_resource type="FontFile" uid="uid://h78p1esy3lii" path="res://fonts/Gridget.otf" id="1_yqeox"]
+[ext_resource type="Texture2D" uid="uid://csl2qglcubxuk" path="res://options.png" id="3_mhnvy"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4ytvr"]
+texture = ExtResource("1_con2f")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vjb58"]
+bg_color = Color(0.14877099, 0.0002988679, 0.31353816, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 20
+shadow_size = 10
+anti_aliasing_size = 2.628
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mhnvy"]
+bg_color = Color(0.14877099, 0.0002988679, 0.31353816, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 20
+shadow_size = 10
+anti_aliasing_size = 2.628
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ytvr"]
+bg_color = Color(0.10795931, 0.00017477479, 0.23941743, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 20
+shadow_size = 10
+anti_aliasing_size = 2.628
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_con2f"]
+bg_color = Color(0.46832657, 1.100991e-06, 1.6845763e-07, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 20
+shadow_size = 10
+anti_aliasing_size = 2.628
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v86rl"]
+bg_color = Color(0.46832657, 1.100991e-06, 1.6845763e-07, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 20
+shadow_size = 10
+anti_aliasing_size = 2.628
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_13sgg"]
+bg_color = Color(0.34615496, 3.7000515e-07, 7.219613e-08, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 20
+shadow_size = 10
+anti_aliasing_size = 2.628
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g3eks"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 20
+shadow_size = 10
+anti_aliasing_size = 0.826
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i6lef"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 20
+shadow_size = 10
+anti_aliasing_size = 0.826
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_70i5f"]
+bg_color = Color(0.641934, 0.641934, 0.641934, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 20
+shadow_size = 10
+anti_aliasing_size = 0.826
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mj5lg"]
+bg_color = Color(0.33333334, 0, 0.5019608, 0.34901962)
+
+[node name="Menu" type="Control" unique_id=740839594]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mhnvy")
+
+[node name="HomeBG" type="Panel" parent="." unique_id=360239015]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_4ytvr")
+
+[node name="StartButton" type="Button" parent="." unique_id=1111034838]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 101.0
+offset_top = -51.75
+offset_right = 409.0
+offset_bottom = 51.75
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.97680634, 0.7461758, 0.96556026, 1)
+theme_override_fonts/font = ExtResource("1_yqeox")
+theme_override_font_sizes/font_size = 65
+theme_override_styles/normal = SubResource("StyleBoxFlat_vjb58")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mhnvy")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4ytvr")
+text = "START"
+
+[node name="ExitButton" type="Button" parent="." unique_id=1096459232]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 106.0
+offset_top = 209.0
+offset_right = 297.0
+offset_bottom = 279.0
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_yqeox")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_con2f")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v86rl")
+theme_override_styles/hover = SubResource("StyleBoxFlat_13sgg")
+text = "EXIT"
+
+[node name="SettingsButton" type="Button" parent="." unique_id=582344700]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -121.0
+offset_top = -125.0
+offset_right = -35.0
+offset_bottom = -35.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.97680634, 0.7461758, 0.96556026, 1)
+theme_override_fonts/font = ExtResource("1_yqeox")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_g3eks")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_i6lef")
+theme_override_styles/hover = SubResource("StyleBoxFlat_70i5f")
+icon = ExtResource("3_mhnvy")
+icon_alignment = 1
+expand_icon = true
+
+[node name="SettingsBG" type="Panel" parent="." unique_id=2059307759]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -462.0
+offset_top = -216.25
+offset_right = 462.0
+offset_bottom = 216.25
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mj5lg")
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
