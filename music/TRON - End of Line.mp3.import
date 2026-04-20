@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://vw8rfhnjfmrp"
+path="res://.godot/imported/TRON - End of Line.mp3-a455b6254bf73902ca54c865c28876a4.mp3str"
+
+[deps]
+
+source_file="res://music/TRON - End of Line.mp3"
+dest_files=["res://.godot/imported/TRON - End of Line.mp3-a455b6254bf73902ca54c865c28876a4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

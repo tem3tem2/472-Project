@@ -35,4 +35,3 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("interact") and _feel_showcase:
 		if _feel_showcase.has_method("set_weapon_kind_from_pedestal"):
 			_feel_showcase.set_weapon_kind_from_pedestal(weapon_kind)
-

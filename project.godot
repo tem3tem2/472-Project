@@ -20,6 +20,10 @@ run/main_scene="uid://c7cd3p3uaswc5"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="uid://ddmk4g0apc6gy"
 
+[audio]
+
+buses/default_bus_layout="uid://blo3eoayfq5me"
+
 [input]
 
 move_forward={
