@@ -11,7 +11,8 @@
 [ext_resource type="Resource" path="res://config/Feel_Default.tres" id="9_feeldefault"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_player"]
-height = 2.0964355
+radius = 0.5175781
+height = 2.1435966
 
 [node name="FeelPlayer" type="CharacterBody3D" unique_id=1767298164]
 script = ExtResource("1_feelplayer")

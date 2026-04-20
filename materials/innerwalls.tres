@@ -1,0 +1,25 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://d4kqsvbys5v0k"]
+
+[ext_resource type="Texture2D" uid="uid://deocjj1xkipxg" path="res://materials/Concrete007_2K-JPG_Color.jpg" id="1_4vg41"]
+[ext_resource type="Texture2D" uid="uid://xkivsrwb7obd" path="res://materials/Concrete007_2K-JPG_AmbientOcclusion.jpg" id="2_uy2su"]
+[ext_resource type="Texture2D" uid="uid://cb8pdwefcn4xg" path="res://materials/Concrete007_2K-JPG_Displacement.jpg" id="3_gby7d"]
+[ext_resource type="Texture2D" uid="uid://dirw5cgdwqx67" path="res://materials/Concrete007_2K-JPG_NormalGL.jpg" id="4_r78bj"]
+[ext_resource type="Texture2D" uid="uid://buyi3iliwia2n" path="res://materials/Concrete007_2K-JPG_Roughness.jpg" id="5_mpe4k"]
+
+[resource]
+albedo_texture = ExtResource("1_4vg41")
+metallic = 0.48
+roughness_texture = ExtResource("5_mpe4k")
+roughness_texture_channel = 4
+normal_enabled = true
+normal_texture = ExtResource("4_r78bj")
+ao_enabled = true
+ao_texture = ExtResource("2_uy2su")
+ao_texture_channel = 4
+heightmap_enabled = true
+heightmap_scale = 1.0
+heightmap_texture = ExtResource("3_gby7d")
+uv1_scale = Vector3(0.2, 0.2, 0.2)
+uv1_offset = Vector3(0.1, 0.3, 0.07)
+uv1_triplanar = true
+uv1_world_triplanar = true

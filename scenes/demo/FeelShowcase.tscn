@@ -177,4 +177,5 @@ visible = false
 [node name="ORB Floor" parent="." unique_id=2097283532 instance=ExtResource("13_f5cug")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2825508, -0.18323219, 7.501251)
 
+[editable path="FeelPlayer"]
 [editable path="SettingsBG"]
