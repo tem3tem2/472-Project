@@ -4,9 +4,9 @@
 [ext_resource type="Script" uid="uid://dhgxlwnyqwxwx" path="res://scripts/settings.gd" id="1_gis3k"]
 [ext_resource type="Texture2D" uid="uid://cr2s42vi8ky2p" path="res://images/Orb Slider.png" id="2_gis3k"]
 [ext_resource type="Texture2D" uid="uid://c387ky4jjup6d" path="res://images/sound.png" id="3_83j8s"]
-[ext_resource type="Script" uid="uid://dlyuefvqqmrwe" path="res://scripts/volume_slider.gd" id="4_am25x"]
+[ext_resource type="Script" path="res://scripts/volume_slider.gd" id="4_am25x"]
 [ext_resource type="Texture2D" uid="uid://c1qwgyb2n8ap5" path="res://images/music.png" id="4_gjs24"]
-[ext_resource type="Script" uid="uid://derauwla8785o" path="res://music_slider.gd" id="5_83j8s"]
+[ext_resource type="Script" path="res://music_slider.gd" id="5_83j8s"]
 [ext_resource type="Texture2D" uid="uid://ev0mrmm0adsb" path="res://images/explosion.png" id="5_am25x"]
 [ext_resource type="Texture2D" uid="uid://vj0sta2t65vw" path="res://images/home.png" id="9_am25x"]
 
@@ -281,92 +281,91 @@ popup/item_2/id = 2
 popup/item_3/text = "TAA"
 popup/item_3/id = 3
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="ScrollContainer/VBoxContainer" unique_id=1266116855]
+[node name="UpscalerContainer" type="HBoxContainer" parent="ScrollContainer/VBoxContainer" unique_id=1266116855]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer2" unique_id=1832209729]
-layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = "Graphic Setting "
-
-[node name="OptionButton" type="OptionButton" parent="ScrollContainer/VBoxContainer/HBoxContainer2" unique_id=2001106185]
-layout_mode = 2
-size_flags_horizontal = 4
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="ScrollContainer/VBoxContainer" unique_id=1398780033]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer3" unique_id=1611587286]
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/UpscalerContainer" unique_id=1832209729]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
-text = "Graphic Setting "
+text = "Upscaler"
 
-[node name="OptionButton" type="OptionButton" parent="ScrollContainer/VBoxContainer/HBoxContainer3" unique_id=467566034]
+[node name="UpscalerDropdown" type="OptionButton" parent="ScrollContainer/VBoxContainer/UpscalerContainer" unique_id=2001106185]
 layout_mode = 2
 size_flags_horizontal = 4
+item_count = 3
+popup/item_0/text = "Bilinear"
+popup/item_0/id = 0
+popup/item_1/text = "FSR 1.0"
+popup/item_1/id = 1
+popup/item_2/text = "FSR 2.2"
+popup/item_2/id = 2
 
-[node name="HBoxContainer4" type="HBoxContainer" parent="ScrollContainer/VBoxContainer" unique_id=1145647567]
+[node name="ResolutionScaleContainer" type="HBoxContainer" parent="ScrollContainer/VBoxContainer" unique_id=1145647567]
 custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer4" unique_id=2065444795]
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/ResolutionScaleContainer" unique_id=2065444795]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
-text = "Graphic Setting "
+text = "Resolution Scale"
 
-[node name="HSlider" type="HSlider" parent="ScrollContainer/VBoxContainer/HBoxContainer4" unique_id=1820415706]
-custom_minimum_size = Vector2(200, 40)
+[node name="ResolutionScaleSlider" type="HSlider" parent="ScrollContainer/VBoxContainer/ResolutionScaleContainer" unique_id=1820415706]
+custom_minimum_size = Vector2(100, 40)
 layout_mode = 2
 theme_override_styles/slider = SubResource("StyleBoxLine_am25x")
 theme_override_styles/grabber_area = SubResource("StyleBoxLine_4ppmf")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_uhhto")
+min_value = 0.5
+max_value = 2.0
+step = 0.5
+value = 1.0
 
-[node name="HBoxContainer5" type="HBoxContainer" parent="ScrollContainer/VBoxContainer" unique_id=588973514]
+[node name="SSAOContainer" type="HBoxContainer" parent="ScrollContainer/VBoxContainer" unique_id=588973514]
 custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer5" unique_id=118802307]
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/SSAOContainer" unique_id=118802307]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
-text = "Graphic Setting "
+text = "SSAO"
 
-[node name="CheckButton" type="CheckButton" parent="ScrollContainer/VBoxContainer/HBoxContainer5" unique_id=2025172649]
+[node name="SSAOCheckButton" type="CheckButton" parent="ScrollContainer/VBoxContainer/SSAOContainer" unique_id=2025172649]
 layout_mode = 2
 
-[node name="HBoxContainer6" type="HBoxContainer" parent="ScrollContainer/VBoxContainer" unique_id=452008536]
+[node name="BloomContainer" type="HBoxContainer" parent="ScrollContainer/VBoxContainer" unique_id=452008536]
 custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer6" unique_id=2045537869]
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/BloomContainer" unique_id=2045537869]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
-text = "Graphic Setting "
+text = "Bloom"
 
-[node name="CheckButton" type="CheckButton" parent="ScrollContainer/VBoxContainer/HBoxContainer6" unique_id=69582790]
+[node name="BloomCheckButton" type="CheckButton" parent="ScrollContainer/VBoxContainer/BloomContainer" unique_id=69582790]
 layout_mode = 2
 
-[node name="HBoxContainer7" type="HBoxContainer" parent="ScrollContainer/VBoxContainer" unique_id=2076343455]
+[node name="Volumetric Fog" type="HBoxContainer" parent="ScrollContainer/VBoxContainer" unique_id=2076343455]
 custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer7" unique_id=1554355364]
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/Volumetric Fog" unique_id=1554355364]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
-text = "Graphic Setting "
+text = "Volumetric Fog"
 
-[node name="CheckButton" type="CheckButton" parent="ScrollContainer/VBoxContainer/HBoxContainer7" unique_id=1606110883]
+[node name="VolumetricFogCheckButton" type="CheckButton" parent="ScrollContainer/VBoxContainer/Volumetric Fog" unique_id=1606110883]
 layout_mode = 2
 
-[node name="HBoxContainer8" type="HBoxContainer" parent="ScrollContainer/VBoxContainer" unique_id=1044441966]
+[node name="SDFGIContainer" type="HBoxContainer" parent="ScrollContainer/VBoxContainer" unique_id=1044441966]
 custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer8" unique_id=2078051537]
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/SDFGIContainer" unique_id=2078051537]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
-text = "Graphic Setting "
+text = "SDFGI - Realistic Lighting"
 
-[node name="CheckButton" type="CheckButton" parent="ScrollContainer/VBoxContainer/HBoxContainer8" unique_id=1056241754]
+[node name="SDFGICheckButton" type="CheckButton" parent="ScrollContainer/VBoxContainer/SDFGIContainer" unique_id=1056241754]
 layout_mode = 2
 
 [node name="Label2" type="Label" parent="." unique_id=2015142797]
@@ -387,3 +386,9 @@ theme_override_font_sizes/font_size = 32
 text = "Graphics Settings"
 
 [connection signal="item_selected" from="ScrollContainer/VBoxContainer/AAContainer/AADropdown" to="." method="_on_aa_dropdown_item_selected"]
+[connection signal="item_selected" from="ScrollContainer/VBoxContainer/UpscalerContainer/UpscalerDropdown" to="." method="_on_upscaler_dropdown_item_selected"]
+[connection signal="value_changed" from="ScrollContainer/VBoxContainer/ResolutionScaleContainer/ResolutionScaleSlider" to="." method="_on_resolution_scale_slider_value_changed"]
+[connection signal="toggled" from="ScrollContainer/VBoxContainer/SSAOContainer/SSAOCheckButton" to="." method="_on_ssao_check_button_toggled"]
+[connection signal="toggled" from="ScrollContainer/VBoxContainer/BloomContainer/BloomCheckButton" to="." method="_on_bloom_check_button_toggled"]
+[connection signal="toggled" from="ScrollContainer/VBoxContainer/Volumetric Fog/VolumetricFogCheckButton" to="." method="_on_volumetric_fog_check_button_toggled"]
+[connection signal="toggled" from="ScrollContainer/VBoxContainer/SDFGIContainer/SDFGICheckButton" to="." method="_on_sdfgi_check_button_toggled"]

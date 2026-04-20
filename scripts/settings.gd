@@ -24,3 +24,27 @@ func _on_done_pressed() -> void:
 
 func _on_aa_dropdown_item_selected(index: int) -> void:
 	Settings.set_anti_aliasing(index)
+
+
+func _on_upscaler_dropdown_item_selected(index: int) -> void:
+	pass # Replace with function body.
+
+
+func _on_resolution_scale_slider_value_changed(value: float) -> void:
+	pass # Replace with function body.
+
+
+func _on_ssao_check_button_toggled(toggled_on: bool) -> void:
+	pass # Replace with function body.
+
+
+func _on_bloom_check_button_toggled(toggled_on: bool) -> void:
+	pass # Replace with function body.
+
+
+func _on_volumetric_fog_check_button_toggled(toggled_on: bool) -> void:
+	pass # Replace with function body.
+
+
+func _on_sdfgi_check_button_toggled(toggled_on: bool) -> void:
+	pass # Replace with function body.
