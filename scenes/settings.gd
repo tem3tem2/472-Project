@@ -22,6 +22,5 @@ func _on_done_pressed() -> void:
 	hide()
 	closed.emit()
 
-
 func _on_option_button_item_selected(index: int) -> void:
 	Settings.set_anti_aliasing(index)
