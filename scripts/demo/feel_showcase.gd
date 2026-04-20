@@ -6,6 +6,8 @@ class_name FeelShowcase
 @export var hud_path: NodePath = NodePath("HUD")
 @export var profile_manager_path: NodePath = NodePath("FeelProfileManager")
 
+@onready var _settings_menu: Panel = $SettingsBG
+
 var _player: FeelPlayer = null
 var _hud: FeelHUD = null
 var _profile_manager: FeelProfileManager = null
@@ -24,6 +26,13 @@ func _ready() -> void:
 	if _profile_manager:
 		_profile_manager.profile_changed.connect(_on_profile_changed)
 	
+	if _settings_menu:
+		_settings_menu.hide()
+		_settings_menu.closed.connect(_on_settings_closed)
+		_settings_menu.show_home_button(true)
+		_settings_menu.home_requested.connect(_on_home_requested)
+		
+		
 	if _player and _hud:
 		# Wait frames to ensure weapon is fully initialized and profile manager has set initial profile
 		await get_tree().process_frame
@@ -134,3 +143,26 @@ func set_weapon_kind(kind: StringName) -> void:
 
 func set_weapon_kind_from_pedestal(kind: StringName) -> void:
 	set_weapon_kind(kind)
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel"):
+		if _settings_menu.visible:
+			_settings_menu.hide()
+			_on_settings_closed()
+		else:
+			_open_settings()
+		get_viewport().set_input_as_handled()
+
+func _open_settings() -> void:
+	_settings_menu.show()
+	get_tree().paused = true
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+
+func _on_settings_closed() -> void:
+	get_tree().paused = false
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
+func _on_home_requested() -> void:
+	get_tree().paused = false
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	get_tree().change_scene_to_file("res://scenes/menu.tscn")

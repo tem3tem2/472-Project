@@ -24,6 +24,10 @@ config/icon="uid://ddmk4g0apc6gy"
 
 buses/default_bus_layout="uid://blo3eoayfq5me"
 
+[autoload]
+
+Settings="*uid://cud7emj05tpk3"
+
 [input]
 
 move_forward={
