@@ -6,18 +6,17 @@ const DEFAULT_ENV_PATH := "res://default_env.tres"
 var env: Environment
 var master_volume: float = 100.0
 var music_volume: float = 100.0
+var anti_aliasing: int = 0
 var render_scale: float = 1.0
 var upscaler: int = 0
-var anti_aliasing: int = 0
 var ssao_enabled: bool = false
 var bloom_enabled: bool = false
 var volumetric_fog_enabled: bool = false
-var sdfgi_enabled: bool = false # Signed Distance Field Global Illumination
+var sdfgi_enabled: bool = false
 
 func _ready() -> void:
 	env = load(DEFAULT_ENV_PATH) as Environment
 	_load()
-	print("Environment loaded: ", env != null)
 	set_master_volume(master_volume)
 	set_music_volume(music_volume)
 	set_anti_aliasing(anti_aliasing)
@@ -69,9 +68,15 @@ func set_upscaler(index: int) -> void:
 	match index:
 		0: vp.scaling_3d_mode = Viewport.SCALING_3D_MODE_BILINEAR
 		1: vp.scaling_3d_mode = Viewport.SCALING_3D_MODE_FSR
-		2: 
+		2:
 			vp.scaling_3d_mode = Viewport.SCALING_3D_MODE_FSR2
 			vp.use_taa = false
+	_save()
+
+func set_ssao_enabled(value: bool) -> void:
+	ssao_enabled = value
+	if env:
+		env.ssao_enabled = value
 	_save()
 
 func set_bloom_enabled(value: bool) -> void:
@@ -79,25 +84,19 @@ func set_bloom_enabled(value: bool) -> void:
 	if env:
 		env.glow_enabled = value
 	_save()
-	
-func set_ssao_enabled(value: bool) -> void:
-	ssao_enabled = value
-	if env:
-		env.ssao_enabled = value
-	_save()
 
 func set_volumetric_fog_enabled(value: bool) -> void:
 	volumetric_fog_enabled = value
 	if env:
 		env.volumetric_fog_enabled = value
 	_save()
-	
+
 func set_sdfgi_enabled(value: bool) -> void:
 	sdfgi_enabled = value
 	if env:
 		env.sdfgi_enabled = value
 	_save()
-
+	
 func _save() -> void:
 	var cfg := ConfigFile.new()
 	cfg.set_value("audio", "master_volume", master_volume)
