@@ -16,4 +16,3 @@ class_name CrosshairConfig
 @export_group("Behavior")
 @export var show_hitmarker: bool = true
 @export var style: String = "cross"  # reserved for future variants
-

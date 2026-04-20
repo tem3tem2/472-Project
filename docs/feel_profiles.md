@@ -326,17 +326,17 @@ Here's a concrete step-by-step guide for creating a custom feel profile:
 
 5. **Wire it into a scene.**  
    - In your scene with `FeelPlayer`:
-     - Set `feel_config` to `Feel_MyGame.tres`
+	 - Set `feel_config` to `Feel_MyGame.tres`
    - Set your weapon's `config` to one of `Rifle_MyGame.tres`, `SMG_MyGame.tres`, or `Shotgun_MyGame.tres`
    - Set HUD's `crosshair_config` to `Crosshair_MyGame.tres`
 
 6. **(Optional) Add it to the in-game profile switcher.**  
    - Open `scripts/demo/feel_profile_manager.gd`
    - Add a new entry to the `_profiles` array with:
-     - `"name": "MyGame"`
-     - `"feel": preload("res://config/Feel_MyGame.tres")`
-     - `"weapon": preload("res://config/Rifle_MyGame.tres")` (demo swaps the rifle)
-     - `"crosshair": preload("res://config/Crosshair_MyGame.tres")`
+	 - `"name": "MyGame"`
+	 - `"feel": preload("res://config/Feel_MyGame.tres")`
+	 - `"weapon": preload("res://config/Rifle_MyGame.tres")` (demo swaps the rifle)
+	 - `"crosshair": preload("res://config/Crosshair_MyGame.tres")`
    - Note: the built-in switcher swaps the **active weapon's config** (rifle). You can still assign your SMG/Shotgun presets on other weapon nodes
 
 7. **Iterate one layer at a time.**  
@@ -345,6 +345,3 @@ Here's a concrete step-by-step guide for creating a custom feel profile:
    - Finally, adjust **CrosshairConfig** so the HUD matches what the gun is doing
 
 ---
-
-
-

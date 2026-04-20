@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://vib4e0j8gger"]
+
+[ext_resource type="FontFile" uid="uid://h78p1esy3lii" path="res://fonts/Gridget.otf" id="1_s1bj5"]
+
+[resource]
+font = ExtResource("1_s1bj5")
+font_size = 28

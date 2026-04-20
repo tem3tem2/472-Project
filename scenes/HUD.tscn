@@ -1,19 +1,24 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene format=3 uid="uid://bi8opghjrednq"]
 
-[ext_resource type="Script" path="res://scripts/hud/hud.gd" id="1_hud"]
+[ext_resource type="Script" uid="uid://b07vjor8u4r4o" path="res://scripts/hud/hud.gd" id="1_hud"]
+[ext_resource type="LabelSettings" uid="uid://vib4e0j8gger" path="res://fonts/new_label_settings.tres" id="2_fls4u"]
+[ext_resource type="FontFile" uid="uid://h78p1esy3lii" path="res://fonts/Gridget.otf" id="3_1etfg"]
 
-[node name="HUD" type="Control"]
+[sub_resource type="LabelSettings" id="LabelSettings_7hsmw"]
+font = ExtResource("3_1etfg")
+font_size = 28
+font_color = Color(0.8653457, 0.42394587, 0.022501897, 1)
+
+[node name="HUD" type="Control" unique_id=283320846]
 layout_mode = 3
 anchors_preset = 15
-anchor_left = 0.0
-anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hud")
 
-[node name="AmmoLabel" type="Label" parent="."]
+[node name="AmmoLabel" type="Label" parent="." unique_id=420714709]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -24,8 +29,9 @@ offset_right = 300.0
 offset_bottom = -10.0
 grow_vertical = 0
 text = "AMMO: 0 / 0"
+label_settings = ExtResource("2_fls4u")
 
-[node name="Crosshair" type="Control" parent="."]
+[node name="Crosshair" type="Control" parent="." unique_id=1108815402]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -39,7 +45,7 @@ offset_bottom = 16.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Top" type="ColorRect" parent="Crosshair"]
+[node name="Top" type="ColorRect" parent="Crosshair" unique_id=788456950]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -49,12 +55,10 @@ anchor_bottom = 0.5
 offset_left = -1.0
 offset_top = -8.0
 offset_right = 1.0
-offset_bottom = 0.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(1, 1, 1, 1)
 
-[node name="Bottom" type="ColorRect" parent="Crosshair"]
+[node name="Bottom" type="ColorRect" parent="Crosshair" unique_id=522360908]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -62,14 +66,12 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -1.0
-offset_top = 0.0
 offset_right = 1.0
 offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(1, 1, 1, 1)
 
-[node name="Left" type="ColorRect" parent="Crosshair"]
+[node name="Left" type="ColorRect" parent="Crosshair" unique_id=1726204921]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -78,28 +80,25 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -8.0
 offset_top = -1.0
-offset_right = 0.0
 offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(1, 1, 1, 1)
 
-[node name="Right" type="ColorRect" parent="Crosshair"]
+[node name="Right" type="ColorRect" parent="Crosshair" unique_id=1020844725]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 0.0
 offset_top = -1.0
 offset_right = 8.0
 offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(1, 1, 1, 1)
 
-[node name="Hitmarker" type="Label" parent="."]
+[node name="Hitmarker" type="Label" parent="." unique_id=1479703715]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -112,51 +111,29 @@ offset_right = 10.0
 offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 2
-modulate = Color(1, 1, 1, 0)
 text = "✕"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HitmarkerTimer" type="Timer" parent="."]
+[node name="HitmarkerTimer" type="Timer" parent="." unique_id=444196919]
 wait_time = 0.15
 one_shot = true
-autostart = false
 
-[node name="ControlsLabel" type="Label" parent="."]
+[node name="ControlsLabel" type="Label" parent="." unique_id=521318682]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.0
 anchor_right = 0.5
-anchor_bottom = 0.0
-offset_left = -200.0
-offset_top = 10.0
-offset_right = 200.0
-offset_bottom = 30.0
+offset_left = -589.0
+offset_top = 7.0
+offset_right = -189.0
+offset_bottom = 37.0
 grow_horizontal = 2
-grow_vertical = 0
-text = "WASD: Move   Space: Jump   Ctrl: Crouch   Shift: Sprint   LMB: Fire   RMB: Aim   R: Reload   F: Melee"
+text = "YOUR STATS: 	"
+label_settings = ExtResource("2_fls4u")
 horizontal_alignment = 1
-vertical_alignment = 0
 
-[node name="PromptLabel" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.0
-anchor_right = 0.5
-anchor_bottom = 0.0
-offset_left = -300.0
-offset_top = 40.0
-offset_right = 300.0
-offset_bottom = 70.0
-grow_horizontal = 2
-grow_vertical = 0
-text = " "
-horizontal_alignment = 1
-vertical_alignment = 0
-
-[node name="TitleLabel" type="Label" parent="."]
+[node name="TitleLabel" type="Label" parent="." unique_id=71284834]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -169,83 +146,37 @@ offset_right = -16.0
 offset_bottom = -8.0
 grow_horizontal = 0
 grow_vertical = 0
-text = "COBRA FPS Feel Kit"
+text = "ORB! 3D AIM TRAINER	"
+label_settings = SubResource("LabelSettings_7hsmw")
 horizontal_alignment = 2
 vertical_alignment = 1
-mouse_filter = 2
 
-[node name="ModeLabel" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -350.0
-offset_top = -52.0
-offset_right = -16.0
-offset_bottom = -32.0
-grow_horizontal = 0
-grow_vertical = 0
-text = ""
-horizontal_alignment = 2
-vertical_alignment = 1
-mouse_filter = 2
-
-[node name="ProfileLabel" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 16.0
-offset_top = 48.0
-offset_right = 240.0
-offset_bottom = 80.0
-grow_horizontal = 2
-grow_vertical = 0
-text = "Profile: Twitchy"
-
-[node name="BlockTint" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 0.0
-offset_bottom = 0.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0.4, 1, 0.1)
-mouse_filter = 2
+[node name="BlockTint" type="ColorRect" parent="." unique_id=1809895325]
 visible = false
-
-[node name="CastTint" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
-anchor_left = 0.0
-anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 0.0
-offset_bottom = 0.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.25, 0.65, 1.0, 0.0)
 mouse_filter = 2
+color = Color(0, 0.4, 1, 0.1)
 
-[node name="BlockLabel" type="Label" parent="."]
+[node name="CastTint" type="ColorRect" parent="." unique_id=503884764]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.25, 0.65, 1, 0)
+
+[node name="BlockLabel" type="Label" parent="." unique_id=2036571809]
+visible = false
 layout_mode = 1
 anchors_preset = 2
-anchor_left = 0.0
 anchor_top = 1.0
-anchor_right = 0.0
 anchor_bottom = 1.0
 offset_left = 16.0
 offset_top = -80.0
@@ -253,29 +184,33 @@ offset_right = 200.0
 offset_bottom = -50.0
 grow_vertical = 0
 text = "BLOCK"
-horizontal_alignment = 0
 vertical_alignment = 1
-mouse_filter = 2
-visible = false
 
-[node name="StatsPanel" type="VBoxContainer" parent="."]
+[node name="StatsPanel" type="VBoxContainer" parent="." unique_id=576042382]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.01
-anchor_top = 0.12
-anchor_right = 0.3
-anchor_bottom = 0.3
+anchors_preset = -1
+anchor_left = 0.004
+anchor_top = 0.062000003
+anchor_right = 0.365
+anchor_bottom = 0.24200001
+offset_left = 0.39199972
+offset_top = -0.1760025
+offset_right = 1.519989
+offset_bottom = -0.17599487
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TargetsLabel" type="Label" parent="StatsPanel"]
+[node name="TargetsLabel" type="Label" parent="StatsPanel" unique_id=1370276772]
 layout_mode = 2
 text = "Targets Hit: 0"
+label_settings = ExtResource("2_fls4u")
 
-[node name="StreakLabel" type="Label" parent="StatsPanel"]
+[node name="StreakLabel" type="Label" parent="StatsPanel" unique_id=1338098580]
 layout_mode = 2
 text = "Best Streak: 0"
+label_settings = ExtResource("2_fls4u")
 
-[node name="AccuracyLabel" type="Label" parent="StatsPanel"]
+[node name="AccuracyLabel" type="Label" parent="StatsPanel" unique_id=1353073327]
 layout_mode = 2
-text = "Shots: 0  Acc: 0%"
+text = "Shots: 0  Accuracy	: 0%"
+label_settings = ExtResource("2_fls4u")

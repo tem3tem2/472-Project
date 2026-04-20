@@ -1,0 +1,11 @@
+[gd_resource type="Environment" format=3 uid="uid://wl84i4x68qqn"]
+
+[resource]
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+glow_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.01
+volumetric_fog_albedo = Color(0.45729697, 0.007666266, 0.38590345, 1)

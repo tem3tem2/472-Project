@@ -50,4 +50,3 @@ COBRA ships with placeholder sound effects from **Pixabay** located in `Sounds/`
 - **Magic & Melee Showcase** — Uses sword-specific swing and impact sounds. The MeleeWeapon instance overrides the default SFX exports with sword clips (`sword-slice-393847.mp3`, `sword-clashhit-393837.mp3`, `sword-blade-slicing-flesh-352708.mp3`) and does not use the voice-y melee clip.
 
 For full details, see the [Known Limitations section](../README.md#known-limitations--next-steps) and [Assets & Licensing section](../README.md#assets--licensing) in the README.
-
