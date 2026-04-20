@@ -10,7 +10,7 @@ func _ready() -> void:
 	home_button.pressed.connect(_on_home_pressed)
 	home_button.hide()
 	done_button.pressed.connect(_on_done_pressed)
-	$ScrollContainer/VBoxContainer/AAContainer/AADropdown.selected = Settings.anti_aliasing
+	$OptionButton.selected = Settings.anti_aliasing
 
 func show_home_button(show: bool) -> void:
 	home_button.visible = show
@@ -22,5 +22,5 @@ func _on_done_pressed() -> void:
 	hide()
 	closed.emit()
 
-func _on_aa_dropdown_item_selected(index: int) -> void:
+func _on_option_button_item_selected(index: int) -> void:
 	Settings.set_anti_aliasing(index)
