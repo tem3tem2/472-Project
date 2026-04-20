@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" path="res://scenes/FeelPlayer.tscn" id="1_feelplayer"]
 [ext_resource type="PackedScene" path="res://scenes/HUD.tscn" id="2_hud"]
+[ext_resource type="Environment" uid="uid://ccn07hldilrr8" path="res://default_env.tres" id="2_theyi"]
 [ext_resource type="PackedScene" path="res://scenes/TrainingTarget.tscn" id="3_trainingtarget"]
 [ext_resource type="PackedScene" path="res://scenes/props/SandbagRow.tscn" id="4_sandbagrow"]
 [ext_resource type="PackedScene" path="res://scenes/props/CrateStack.tscn" id="5_cratestack"]
@@ -14,21 +15,6 @@
 [ext_resource type="Script" uid="uid://c0h38itv25hvl" path="res://scripts/demo/weapon_pedestal.gd" id="13_weaponpedestal"]
 [ext_resource type="PackedScene" uid="uid://dr4kotf4rhy4d" path="res://scenes/settings.tscn" id="14_0ioq1"]
 [ext_resource type="PackedScene" path="res://scenes/demo/DebugOverlay.tscn" id="900_debug_overlay"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sky"]
-
-[sub_resource type="Sky" id="Sky_showcase"]
-sky_material = SubResource("ProceduralSkyMaterial_sky")
-
-[sub_resource type="Environment" id="Environment_showcase"]
-background_mode = 2
-sky = SubResource("Sky_showcase")
-ambient_light_source = 2
-ambient_light_color = Color(1, 1, 1, 1)
-ambient_light_energy = 0.6
-fog_enabled = true
-fog_density = 0.002
-fog_sky_affect = 0.1
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_range_floor"]
 size = Vector3(40, 0.5, 80)
@@ -68,7 +54,7 @@ roughness = 0.7
 script = ExtResource("7_feelshowcase")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1634499520]
-environment = SubResource("Environment_showcase")
+environment = ExtResource("2_theyi")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=519569663]
 transform = Transform3D(0.8660254, 0.38302222, 0.32139382, 0, 0.64278764, -0.76604444, -0.5, 0.66341394, 0.5566704, 0, 0, 0)

@@ -119,3 +119,4 @@ block={
 [rendering]
 
 environment/defaults/default_clear_color=Color(0.7, 0.78, 0.88, 1)
+environment/defaults/default_environment="uid://ccn07hldilrr8"
