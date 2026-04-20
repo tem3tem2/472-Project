@@ -1,0 +1,25 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://sdqm2n8ptfhx"]
+
+[ext_resource type="Texture2D" uid="uid://xkivsrwb7obd" path="res://materials/Concrete007_2K-JPG_AmbientOcclusion.jpg" id="AmbientOcclusion"]
+[ext_resource type="Texture2D" uid="uid://deocjj1xkipxg" path="res://materials/Concrete007_2K-JPG_Color.jpg" id="Color"]
+[ext_resource type="Texture2D" uid="uid://cb8pdwefcn4xg" path="res://materials/Concrete007_2K-JPG_Displacement.jpg" id="Displacement"]
+[ext_resource type="Texture2D" uid="uid://dirw5cgdwqx67" path="res://materials/Concrete007_2K-JPG_NormalGL.jpg" id="NormalGL"]
+[ext_resource type="Texture2D" uid="uid://buyi3iliwia2n" path="res://materials/Concrete007_2K-JPG_Roughness.jpg" id="Roughness"]
+
+[resource]
+albedo_texture = ExtResource("Color")
+metallic = 0.7
+roughness_texture = ExtResource("Roughness")
+roughness_texture_channel = 4
+normal_enabled = true
+normal_texture = ExtResource("NormalGL")
+ao_enabled = true
+ao_texture = ExtResource("AmbientOcclusion")
+ao_texture_channel = 4
+heightmap_enabled = true
+heightmap_scale = 1.0
+heightmap_texture = ExtResource("Displacement")
+uv1_scale = Vector3(0.2, 0.2, 0.2)
+uv1_offset = Vector3(0.1, 0.3, 0.07)
+uv1_triplanar = true
+uv1_world_triplanar = true

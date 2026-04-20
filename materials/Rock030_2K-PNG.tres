@@ -1,0 +1,26 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cuiao8jipxbdh"]
+
+[ext_resource type="Texture2D" uid="uid://r07we3pr23ph" path="res://materials/Rock030_2K-PNG_AmbientOcclusion.png" id="AmbientOcclusion"]
+[ext_resource type="Texture2D" uid="uid://lo8g1r4yvyno" path="res://materials/Rock030_2K-PNG_Color.png" id="Color"]
+[ext_resource type="Texture2D" uid="uid://bttqo0b7de5ac" path="res://materials/Rock030_2K-PNG_Displacement.png" id="Displacement"]
+[ext_resource type="Texture2D" uid="uid://cj2otfsqgfm1h" path="res://materials/Rock030_2K-PNG_NormalGL.png" id="NormalGL"]
+[ext_resource type="Texture2D" uid="uid://chjwchxp2jp8h" path="res://materials/Rock030_2K-PNG_Roughness.png" id="Roughness"]
+
+[resource]
+albedo_texture = ExtResource("Color")
+roughness = 0.0
+roughness_texture = ExtResource("Roughness")
+roughness_texture_channel = 4
+normal_enabled = true
+normal_texture = ExtResource("NormalGL")
+ao_enabled = true
+ao_texture = ExtResource("AmbientOcclusion")
+ao_texture_channel = 4
+heightmap_enabled = true
+heightmap_scale = 1.0
+heightmap_texture = ExtResource("Displacement")
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_triplanar = true
+uv1_world_triplanar = true
+uv2_triplanar = true
+uv2_world_triplanar = true

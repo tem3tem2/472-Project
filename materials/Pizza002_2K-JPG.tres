@@ -1,0 +1,25 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bfispwjmga352"]
+
+[ext_resource type="Texture2D" uid="uid://cf2kn2lw3wjyf" path="res://materials/Pizza002_2K-JPG_AmbientOcclusion.jpg" id="AmbientOcclusion"]
+[ext_resource type="Texture2D" uid="uid://cay5ge0tdbtku" path="res://materials/Pizza002_2K-JPG_Color.jpg" id="Color"]
+[ext_resource type="Texture2D" uid="uid://bu2oqrmx8qhu8" path="res://materials/Pizza002_2K-JPG_Displacement.jpg" id="Displacement"]
+[ext_resource type="Texture2D" uid="uid://vdphgqkucogw" path="res://materials/Pizza002_2K-JPG_NormalGL.jpg" id="NormalGL"]
+[ext_resource type="Texture2D" uid="uid://djp6xchlv8fc" path="res://materials/Pizza002_2K-JPG_Roughness.jpg" id="Roughness"]
+
+[resource]
+albedo_texture = ExtResource("Color")
+metallic = 0.51
+roughness = 0.35
+roughness_texture = ExtResource("Roughness")
+roughness_texture_channel = 4
+normal_enabled = true
+normal_texture = ExtResource("NormalGL")
+ao_enabled = true
+ao_texture = ExtResource("AmbientOcclusion")
+ao_texture_channel = 4
+heightmap_enabled = true
+heightmap_scale = 1.0
+heightmap_texture = ExtResource("Displacement")
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_triplanar = true
+uv1_world_triplanar = true

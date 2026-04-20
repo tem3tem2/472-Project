@@ -43,4 +43,3 @@ class_name PlayerFeelConfig
 @export var recoil_scale: float = 1.0
 
 @export var shake_scale: float = 1.0
-

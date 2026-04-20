@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cf4du6wu173b8"]
+
+[resource]
+metallic = 1.0
+roughness = 0.25
+emission_enabled = true
+emission = Color(0.79093504, 0.085368015, 0.7653957, 1)
+emission_energy_multiplier = 8.0
+uv1_triplanar = true
+uv1_world_triplanar = true
