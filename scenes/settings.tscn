@@ -1,0 +1,237 @@
+[gd_scene format=3 uid="uid://dr4kotf4rhy4d"]
+
+[ext_resource type="FontFile" uid="uid://h78p1esy3lii" path="res://fonts/Gridget.otf" id="1_es4n0"]
+[ext_resource type="Script" uid="uid://dhgxlwnyqwxwx" path="res://scenes/settings.gd" id="1_gis3k"]
+[ext_resource type="Texture2D" uid="uid://cr2s42vi8ky2p" path="res://images/Orb Slider.png" id="2_gis3k"]
+[ext_resource type="Texture2D" uid="uid://c387ky4jjup6d" path="res://images/sound.png" id="3_83j8s"]
+[ext_resource type="Script" uid="uid://dlyuefvqqmrwe" path="res://scenes/volume_slider.gd" id="4_am25x"]
+[ext_resource type="Texture2D" uid="uid://c1qwgyb2n8ap5" path="res://images/music.png" id="4_gjs24"]
+[ext_resource type="Script" uid="uid://derauwla8785o" path="res://scenes/music_slider.gd" id="5_83j8s"]
+[ext_resource type="Texture2D" uid="uid://ev0mrmm0adsb" path="res://images/explosion.png" id="5_am25x"]
+[ext_resource type="Texture2D" uid="uid://vj0sta2t65vw" path="res://images/home.png" id="9_am25x"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mj5lg"]
+bg_color = Color(0.33333334, 0, 0.5019608, 0.4392157)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_4ytvr"]
+grow_begin = -4.0
+grow_end = -4.0
+thickness = 15
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_g3eks"]
+color = Color(1, 0.5764706, 0.78431374, 1)
+grow_begin = -4.0
+grow_end = -4.0
+thickness = 15
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_v86rl"]
+color = Color(1, 0.5764706, 0.78431374, 1)
+grow_begin = -4.0
+grow_end = 4.0
+thickness = 15
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ufwb2"]
+texture = ExtResource("3_83j8s")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6cdou"]
+texture = ExtResource("4_gjs24")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i42df"]
+texture = ExtResource("5_am25x")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ufwb2"]
+bg_color = Color(1, 0.5756585, 0.7835264, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 10
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6cdou"]
+bg_color = Color(0.49272704, 3.0563026e-06, 0.3162657, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 10
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i42df"]
+bg_color = Color(0.49272704, 3.0563026e-06, 0.3162657, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 10
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ppmf"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 10
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uhhto"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1g033"]
+bg_color = Color(0.851769, 0.8517689, 0.85176885, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 10
+shadow_size = 10
+
+[node name="SettingsBG" type="Panel" unique_id=1297866643]
+process_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -515.5
+offset_top = -266.5
+offset_right = 515.5
+offset_bottom = 266.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_mj5lg")
+script = ExtResource("1_gis3k")
+
+[node name="Label" type="Label" parent="." unique_id=1193382817]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -139.25
+offset_top = -266.0
+offset_right = 139.25
+offset_bottom = -190.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_es4n0")
+theme_override_font_sizes/font_size = 46
+text = "SETTINGS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Volume Slider" type="HSlider" parent="." unique_id=1348425382]
+layout_mode = 0
+offset_left = 162.5
+offset_top = 118.5
+offset_right = 515.5
+offset_bottom = 152.5
+theme_override_icons/grabber = ExtResource("2_gis3k")
+theme_override_icons/grabber_highlight = ExtResource("2_gis3k")
+theme_override_icons/grabber_disabled = ExtResource("2_gis3k")
+theme_override_styles/slider = SubResource("StyleBoxLine_4ytvr")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_g3eks")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_v86rl")
+value = 100.0
+script = ExtResource("4_am25x")
+
+[node name="Panel" type="Panel" parent="." unique_id=1842703752]
+layout_mode = 0
+offset_left = 81.5
+offset_top = 100.5
+offset_right = 148.5
+offset_bottom = 167.5
+theme_override_styles/panel = SubResource("StyleBoxTexture_ufwb2")
+
+[node name="MusicSlider" type="HSlider" parent="." unique_id=114925507]
+process_mode = 3
+layout_mode = 0
+offset_left = 162.5
+offset_top = 222.5
+offset_right = 515.5
+offset_bottom = 256.5
+theme_override_icons/grabber = ExtResource("2_gis3k")
+theme_override_icons/grabber_highlight = ExtResource("2_gis3k")
+theme_override_icons/grabber_disabled = ExtResource("2_gis3k")
+theme_override_styles/slider = SubResource("StyleBoxLine_4ytvr")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_g3eks")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_v86rl")
+value = 100.0
+script = ExtResource("5_83j8s")
+
+[node name="Panel2" type="Panel" parent="." unique_id=1490639270]
+layout_mode = 0
+offset_left = 79.5
+offset_top = 206.5
+offset_right = 146.5
+offset_bottom = 273.5
+theme_override_styles/panel = SubResource("StyleBoxTexture_6cdou")
+
+[node name="SFXSlider" type="HSlider" parent="." unique_id=1003397549]
+layout_mode = 0
+offset_left = 162.5
+offset_top = 324.5
+offset_right = 515.5
+offset_bottom = 358.5
+theme_override_icons/grabber = ExtResource("2_gis3k")
+theme_override_icons/grabber_highlight = ExtResource("2_gis3k")
+theme_override_icons/grabber_disabled = ExtResource("2_gis3k")
+theme_override_styles/slider = SubResource("StyleBoxLine_4ytvr")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_g3eks")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_v86rl")
+value = 100.0
+
+[node name="Panel3" type="Panel" parent="." unique_id=725498902]
+layout_mode = 0
+offset_left = 82.5
+offset_top = 303.5
+offset_right = 149.5
+offset_bottom = 370.5
+theme_override_styles/panel = SubResource("StyleBoxTexture_i42df")
+
+[node name="DoneButton" type="Button" parent="." unique_id=1238945202]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -106.375
+offset_top = 171.0
+offset_right = 106.375
+offset_bottom = 247.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_es4n0")
+theme_override_font_sizes/font_size = 52
+theme_override_styles/normal = SubResource("StyleBoxFlat_ufwb2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6cdou")
+theme_override_styles/hover = SubResource("StyleBoxFlat_i42df")
+text = "Done"
+
+[node name="HomeButton" type="Button" parent="." unique_id=348414637]
+layout_mode = 0
+offset_left = 74.5
+offset_top = 430.5
+offset_right = 163.5
+offset_bottom = 519.5
+theme_override_styles/normal = SubResource("StyleBoxFlat_4ppmf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_uhhto")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1g033")
+icon = ExtResource("9_am25x")
+icon_alignment = 1
+expand_icon = true

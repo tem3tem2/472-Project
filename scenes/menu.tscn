@@ -5,10 +5,7 @@
 [ext_resource type="FontFile" uid="uid://h78p1esy3lii" path="res://fonts/Gridget.otf" id="1_yqeox"]
 [ext_resource type="AudioStream" uid="uid://vw8rfhnjfmrp" path="res://music/TRON - End of Line.mp3" id="3_4ytvr"]
 [ext_resource type="Texture2D" uid="uid://csl2qglcubxuk" path="res://images/options.png" id="3_mhnvy"]
-[ext_resource type="Texture2D" uid="uid://cr2s42vi8ky2p" path="res://images/Orb Slider.png" id="6_g3eks"]
-[ext_resource type="Texture2D" uid="uid://c387ky4jjup6d" path="res://images/sound.png" id="7_i6lef"]
-[ext_resource type="Texture2D" uid="uid://c1qwgyb2n8ap5" path="res://images/music.png" id="8_70i5f"]
-[ext_resource type="Texture2D" uid="uid://ev0mrmm0adsb" path="res://images/explosion.png" id="9_mj5lg"]
+[ext_resource type="PackedScene" uid="uid://dr4kotf4rhy4d" path="res://scenes/settings.tscn" id="6_g3eks"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4ytvr"]
 texture = ExtResource("1_con2f")
@@ -103,66 +100,6 @@ corner_detail = 20
 shadow_size = 10
 anti_aliasing_size = 0.826
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mj5lg"]
-bg_color = Color(0.33333334, 0, 0.5019608, 0.4392157)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-
-[sub_resource type="StyleBoxLine" id="StyleBoxLine_4ytvr"]
-grow_begin = -4.0
-grow_end = -4.0
-thickness = 15
-
-[sub_resource type="StyleBoxLine" id="StyleBoxLine_g3eks"]
-color = Color(1, 0.5764706, 0.78431374, 1)
-grow_begin = -4.0
-grow_end = -4.0
-thickness = 15
-
-[sub_resource type="StyleBoxLine" id="StyleBoxLine_v86rl"]
-color = Color(1, 0.5764706, 0.78431374, 1)
-grow_begin = -4.0
-grow_end = 4.0
-thickness = 15
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ufwb2"]
-texture = ExtResource("7_i6lef")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6cdou"]
-texture = ExtResource("8_70i5f")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i42df"]
-texture = ExtResource("9_mj5lg")
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ufwb2"]
-bg_color = Color(1, 0.5756585, 0.7835264, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-corner_detail = 10
-shadow_size = 10
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6cdou"]
-bg_color = Color(0.49272704, 3.0563026e-06, 0.3162657, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-corner_detail = 10
-shadow_size = 10
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i42df"]
-bg_color = Color(0.49272704, 3.0563026e-06, 0.3162657, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-corner_detail = 10
-shadow_size = 10
-
 [node name="Menu" type="Control" unique_id=740839594]
 layout_mode = 3
 anchors_preset = 15
@@ -184,6 +121,7 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_4ytvr")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="HomeBG" unique_id=97402952]
 stream = ExtResource("3_4ytvr")
 autoplay = true
+bus = &"Music"
 parameters/looping = false
 
 [node name="StartButton" type="Button" parent="." unique_id=1111034838]
@@ -245,131 +183,9 @@ icon = ExtResource("3_mhnvy")
 icon_alignment = 1
 expand_icon = true
 
-[node name="SettingsBG" type="Panel" parent="." unique_id=2059307759]
+[node name="SettingsBG" parent="." unique_id=1297866643 instance=ExtResource("6_g3eks")]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -515.5
-offset_top = -266.5
-offset_right = 515.5
-offset_bottom = 266.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_mj5lg")
-
-[node name="Label" type="Label" parent="SettingsBG" unique_id=162421156]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -139.25
-offset_top = -266.0
-offset_right = 139.25
-offset_bottom = -190.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("1_yqeox")
-theme_override_font_sizes/font_size = 46
-text = "SETTINGS"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Volume Slider" type="HSlider" parent="SettingsBG" unique_id=1349783350]
-layout_mode = 0
-offset_left = 162.5
-offset_top = 118.5
-offset_right = 515.5
-offset_bottom = 152.5
-theme_override_icons/grabber = ExtResource("6_g3eks")
-theme_override_icons/grabber_highlight = ExtResource("6_g3eks")
-theme_override_icons/grabber_disabled = ExtResource("6_g3eks")
-theme_override_styles/slider = SubResource("StyleBoxLine_4ytvr")
-theme_override_styles/grabber_area = SubResource("StyleBoxLine_g3eks")
-theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_v86rl")
-min_value = -80.0
-max_value = 0.0
-
-[node name="Panel" type="Panel" parent="SettingsBG" unique_id=604832463]
-layout_mode = 0
-offset_left = 81.5
-offset_top = 100.5
-offset_right = 148.5
-offset_bottom = 167.5
-theme_override_styles/panel = SubResource("StyleBoxTexture_ufwb2")
-
-[node name="MusicSlider" type="HSlider" parent="SettingsBG" unique_id=1421646057]
-layout_mode = 0
-offset_left = 162.5
-offset_top = 222.5
-offset_right = 515.5
-offset_bottom = 256.5
-theme_override_icons/grabber = ExtResource("6_g3eks")
-theme_override_icons/grabber_highlight = ExtResource("6_g3eks")
-theme_override_icons/grabber_disabled = ExtResource("6_g3eks")
-theme_override_styles/slider = SubResource("StyleBoxLine_4ytvr")
-theme_override_styles/grabber_area = SubResource("StyleBoxLine_g3eks")
-theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_v86rl")
-min_value = -80.0
-max_value = 0.0
-
-[node name="Panel2" type="Panel" parent="SettingsBG" unique_id=334930486]
-layout_mode = 0
-offset_left = 79.5
-offset_top = 206.5
-offset_right = 146.5
-offset_bottom = 273.5
-theme_override_styles/panel = SubResource("StyleBoxTexture_6cdou")
-
-[node name="SFXSlider" type="HSlider" parent="SettingsBG" unique_id=440027949]
-layout_mode = 0
-offset_left = 162.5
-offset_top = 324.5
-offset_right = 515.5
-offset_bottom = 358.5
-theme_override_icons/grabber = ExtResource("6_g3eks")
-theme_override_icons/grabber_highlight = ExtResource("6_g3eks")
-theme_override_icons/grabber_disabled = ExtResource("6_g3eks")
-theme_override_styles/slider = SubResource("StyleBoxLine_4ytvr")
-theme_override_styles/grabber_area = SubResource("StyleBoxLine_g3eks")
-theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_v86rl")
-min_value = -80.0
-max_value = 0.0
-
-[node name="Panel3" type="Panel" parent="SettingsBG" unique_id=654998471]
-layout_mode = 0
-offset_left = 82.5
-offset_top = 303.5
-offset_right = 149.5
-offset_bottom = 370.5
-theme_override_styles/panel = SubResource("StyleBoxTexture_i42df")
-
-[node name="DoneButton" type="Button" parent="SettingsBG" unique_id=2001323739]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -106.375
-offset_top = 171.0
-offset_right = 106.375
-offset_bottom = 247.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_yqeox")
-theme_override_font_sizes/font_size = 52
-theme_override_styles/normal = SubResource("StyleBoxFlat_ufwb2")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_6cdou")
-theme_override_styles/hover = SubResource("StyleBoxFlat_i42df")
-text = "Done"
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
-[connection signal="pressed" from="SettingsBG/DoneButton" to="." method="_on_done_button_pressed"]
