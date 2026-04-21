@@ -1,4 +1,4 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://dsu8taoxt7p6k"]
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://k3pkakgdsimd"]
 
 [ext_resource type="Texture2D" uid="uid://b8irqdlybd0fb" path="res://materials/Plastic006_2K-PNG_Color.png" id="Color"]
 [ext_resource type="Texture2D" uid="uid://b5r50pvpyw3pj" path="res://materials/Plastic006_2K-PNG_Displacement.png" id="Displacement"]

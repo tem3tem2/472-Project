@@ -197,6 +197,9 @@ _data = {
 &"orb spin": SubResource("Animation_iqxoq")
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_r03fp"]
+size = Vector3(20.259798, 20.146078, 20.259798)
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1a5yb"]
 
 [node name="OrbWorld" type="Node3D" unique_id=1375736711]
@@ -327,7 +330,14 @@ surface_material_override/0 = ExtResource("11_iqxoq")
 [node name="Orb ring" parent="ORB center" index="1" unique_id=602801465]
 surface_material_override/0 = ExtResource("7_abs8d")
 
-[node name="ORB title" parent="ORB center" index="2" unique_id=699248142]
+[node name="StaticBody3D" type="StaticBody3D" parent="ORB center/Orb ring" index="0" unique_id=1612389589]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4839225, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ORB center/Orb ring/StaticBody3D" unique_id=1456585496]
+transform = Transform3D(0.9999888, 0, 0, 0, 0.9999978, 0, 0, 0, 0.9999888, 0, 9.652547, 0)
+shape = SubResource("BoxShape3D_r03fp")
+
+[node name="ORB title" parent="ORB center" index="2" unique_id=1216057038]
 transform = Transform3D(3.1115642, 0, 0, 0, -1.3601077e-07, -3.111564, 0, 3.1115637, -1.3601078e-07, 0.002805397, 5.8224106, -0.040090173)
 surface_material_override/0 = ExtResource("11_iqxoq")
 
@@ -406,4 +416,5 @@ process_mode = 3
 [editable path="ORB Walls"]
 [editable path="ORB center"]
 [editable path="FeelPlayer"]
-[editable path="SettingsBG"]
+[editable path="FeelPlayer/RecoilPivot/Camera3D/WeaponRig/Weapon/ORB GUN"]
+[editable path="FeelPlayer/RecoilPivot/Camera3D/WeaponRig/Weapon/ORB BULLET"]
