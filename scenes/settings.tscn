@@ -100,14 +100,20 @@ corner_detail = 10
 shadow_size = 10
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_am25x"]
+grow_begin = -4.0
+grow_end = -4.0
 thickness = 10
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_4ppmf"]
 color = Color(1, 0.5764706, 0.78431374, 1)
+grow_begin = -4.0
+grow_end = -4.0
 thickness = 10
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_uhhto"]
 color = Color(1, 0.5764706, 0.78431374, 1)
+grow_begin = -4.0
+grow_end = -4.0
 thickness = 10
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4ppmf"]
@@ -335,7 +341,7 @@ custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
 
 [node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/ResolutionScaleContainer" unique_id=2065444795]
-custom_minimum_size = Vector2(232.955, 40.825)
+custom_minimum_size = Vector2(225.965, 40.825)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_es4n0")
 theme_override_font_sizes/font_size = 25
@@ -343,7 +349,7 @@ text = "Resolution"
 vertical_alignment = 1
 
 [node name="ResolutionScaleSlider" type="HSlider" parent="ScrollContainer/VBoxContainer/ResolutionScaleContainer" unique_id=1820415706]
-custom_minimum_size = Vector2(146.615, 40)
+custom_minimum_size = Vector2(159.28, 40)
 layout_mode = 2
 theme_override_icons/grabber = ExtResource("2_gis3k")
 theme_override_icons/grabber_highlight = ExtResource("2_gis3k")
