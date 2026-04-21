@@ -10,6 +10,8 @@
 [ext_resource type="Script" uid="uid://derauwla8785o" path="res://scenes/music_slider.gd" id="6_uhhto"]
 [ext_resource type="Script" uid="uid://bb04bhca74sm5" path="res://scenes/sfx_slider.gd" id="8_1g033"]
 [ext_resource type="Texture2D" uid="uid://vj0sta2t65vw" path="res://images/home.png" id="9_am25x"]
+[ext_resource type="Texture2D" uid="uid://d2167umq8df3f" path="res://images/Pink Toggle Set.png" id="11_1g033"]
+[ext_resource type="Texture2D" uid="uid://bm6865djy8i53" path="res://images/Black Toggle Set.png" id="12_01roj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mj5lg"]
 bg_color = Color(0.33333334, 0, 0.5019608, 0.4392157)
@@ -107,6 +109,24 @@ thickness = 10
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_uhhto"]
 color = Color(1, 0.5764706, 0.78431374, 1)
 thickness = 10
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4ppmf"]
+load_path = "res://.godot/imported/Pink Toggle Set.png-4f55e40a1f0d388706857f5e7dacfc43.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_uhhto"]
+load_path = "res://.godot/imported/Black Toggle Set.png-480a0956ca381b9d4d80bdc465edce97.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1g033"]
+load_path = "res://.godot/imported/Pink Toggle Set.png-4f55e40a1f0d388706857f5e7dacfc43.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_01roj"]
+load_path = "res://.godot/imported/Black Toggle Set.png-480a0956ca381b9d4d80bdc465edce97.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wqwn7"]
+load_path = "res://.godot/imported/Pink Toggle Set.png-4f55e40a1f0d388706857f5e7dacfc43.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_oe2nd"]
+load_path = "res://.godot/imported/Black Toggle Set.png-480a0956ca381b9d4d80bdc465edce97.ctex"
 
 [node name="SettingsBG" type="Panel" unique_id=1297866643]
 process_mode = 3
@@ -256,7 +276,7 @@ layout_mode = 0
 offset_left = 587.5
 offset_top = 118.5
 offset_right = 973.5
-offset_bottom = 410.5
+offset_bottom = 426.5
 horizontal_scroll_mode = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer" unique_id=764780792]
@@ -267,12 +287,15 @@ size_flags_horizontal = 3
 layout_mode = 2
 
 [node name="Label2" type="Label" parent="ScrollContainer/VBoxContainer/AAContainer" unique_id=1949310447]
+custom_minimum_size = Vector2(230.57, 40.21)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_es4n0")
 theme_override_font_sizes/font_size = 25
 text = "Anti-Aliasing"
+vertical_alignment = 1
 
 [node name="AADropdown" type="OptionButton" parent="ScrollContainer/VBoxContainer/AAContainer" unique_id=992853644]
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 item_count = 4
@@ -289,12 +312,15 @@ popup/item_3/id = 3
 layout_mode = 2
 
 [node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/UpscalerContainer" unique_id=1832209729]
+custom_minimum_size = Vector2(230.24, 40.555)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_es4n0")
 theme_override_font_sizes/font_size = 25
 text = "Upscaler"
+vertical_alignment = 1
 
 [node name="UpscalerDropdown" type="OptionButton" parent="ScrollContainer/VBoxContainer/UpscalerContainer" unique_id=2001106185]
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 item_count = 3
@@ -310,14 +336,19 @@ custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
 
 [node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/ResolutionScaleContainer" unique_id=2065444795]
+custom_minimum_size = Vector2(232.955, 40.825)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_es4n0")
 theme_override_font_sizes/font_size = 25
-text = "Resolution Scale"
+text = "Resolution"
+vertical_alignment = 1
 
 [node name="ResolutionScaleSlider" type="HSlider" parent="ScrollContainer/VBoxContainer/ResolutionScaleContainer" unique_id=1820415706]
-custom_minimum_size = Vector2(100, 40)
+custom_minimum_size = Vector2(146.615, 40)
 layout_mode = 2
+theme_override_icons/grabber = ExtResource("2_gis3k")
+theme_override_icons/grabber_highlight = ExtResource("2_gis3k")
+theme_override_icons/grabber_disabled = ExtResource("2_gis3k")
 theme_override_styles/slider = SubResource("StyleBoxLine_am25x")
 theme_override_styles/grabber_area = SubResource("StyleBoxLine_4ppmf")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_uhhto")
@@ -331,56 +362,72 @@ custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
 
 [node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/SSAOContainer" unique_id=118802307]
+custom_minimum_size = Vector2(0, 40.08)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_es4n0")
 theme_override_font_sizes/font_size = 25
 text = "SSAO"
+vertical_alignment = 1
 
 [node name="SSAOCheckButton" type="CheckButton" parent="ScrollContainer/VBoxContainer/SSAOContainer" unique_id=2025172649]
+custom_minimum_size = Vector2(312.365, 0)
 layout_mode = 2
-theme_override_icons/unchecked = ExtResource("2_gis3k")
-theme_override_icons/unchecked_disabled = ExtResource("2_gis3k")
-theme_override_icons/unchecked_mirrored = ExtResource("2_gis3k")
-theme_override_icons/unchecked_disabled_mirrored = ExtResource("2_gis3k")
+theme_override_icons/checked = SubResource("CompressedTexture2D_4ppmf")
+theme_override_icons/unchecked = SubResource("CompressedTexture2D_uhhto")
 
 [node name="BloomContainer" type="HBoxContainer" parent="ScrollContainer/VBoxContainer" unique_id=452008536]
 custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
 
 [node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/BloomContainer" unique_id=2045537869]
+custom_minimum_size = Vector2(0, 40.235)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_es4n0")
 theme_override_font_sizes/font_size = 25
 text = "Bloom"
+vertical_alignment = 1
 
 [node name="BloomCheckButton" type="CheckButton" parent="ScrollContainer/VBoxContainer/BloomContainer" unique_id=69582790]
+custom_minimum_size = Vector2(292.87, 0)
 layout_mode = 2
+theme_override_icons/checked = SubResource("CompressedTexture2D_1g033")
+theme_override_icons/unchecked = SubResource("CompressedTexture2D_01roj")
 
 [node name="VolumetricFogContainer" type="HBoxContainer" parent="ScrollContainer/VBoxContainer" unique_id=2076343455]
 custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
 
 [node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/VolumetricFogContainer" unique_id=1554355364]
+custom_minimum_size = Vector2(0, 40.405)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_es4n0")
 theme_override_font_sizes/font_size = 25
 text = "Volumetric Fog"
+vertical_alignment = 1
 
 [node name="VolumetricFogCheckButton" type="CheckButton" parent="ScrollContainer/VBoxContainer/VolumetricFogContainer" unique_id=1606110883]
+custom_minimum_size = Vector2(141.27, 0)
 layout_mode = 2
+theme_override_icons/checked = SubResource("CompressedTexture2D_wqwn7")
+theme_override_icons/unchecked = SubResource("CompressedTexture2D_oe2nd")
 
 [node name="SDFGIContainer" type="HBoxContainer" parent="ScrollContainer/VBoxContainer" unique_id=1044441966]
 custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
 
 [node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/SDFGIContainer" unique_id=2078051537]
+custom_minimum_size = Vector2(0, 40.1)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_es4n0")
 theme_override_font_sizes/font_size = 25
 text = "SDFGI -  Lighting"
+vertical_alignment = 1
 
 [node name="SDFGICheckButton" type="CheckButton" parent="ScrollContainer/VBoxContainer/SDFGIContainer" unique_id=1056241754]
+custom_minimum_size = Vector2(138, 0)
 layout_mode = 2
+theme_override_icons/checked = ExtResource("11_1g033")
+theme_override_icons/unchecked = ExtResource("12_01roj")
 
 [node name="Label2" type="Label" parent="." unique_id=2015142797]
 layout_mode = 1
