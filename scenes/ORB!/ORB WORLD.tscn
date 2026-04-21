@@ -1,22 +1,21 @@
 [gd_scene format=3 uid="uid://bt3lhyxd2ajyt"]
 
 [ext_resource type="Environment" uid="uid://wl84i4x68qqn" path="res://materials/new_environment.tres" id="1_qpmb6"]
-[ext_resource type="Script" uid="uid://doj1u1ddg8l7x" path="res://scenes/ORB!/orb_world.gd" id="1_v51q2"]
+[ext_resource type="Script" path="res://scenes/ORB!/orb_world.gd" id="1_v51q2"]
 [ext_resource type="PackedScene" uid="uid://bxy08s4oj8vtt" path="res://scenes/ORB Assets/ORB Floor.glb" id="1_y2xap"]
 [ext_resource type="PackedScene" uid="uid://c0falpon6ymtw" path="res://scenes/FeelPlayer.tscn" id="2_1f23h"]
 [ext_resource type="Material" uid="uid://dl0bd8oqdtult" path="res://materials/Tiles107_2K-JPG.tres" id="2_uwsiw"]
-[ext_resource type="Material" path="res://materials/Fireball_Material.tres" id="5_1a5yb"]
+[ext_resource type="Material" uid="uid://twn7mvppy1ns" path="res://materials/Fireball_Material.tres" id="5_1a5yb"]
 [ext_resource type="Material" uid="uid://bfispwjmga352" path="res://materials/Pizza002_2K-JPG.tres" id="5_a1a2d"]
 [ext_resource type="PackedScene" uid="uid://bi8opghjrednq" path="res://scenes/HUD.tscn" id="5_jix0w"]
 [ext_resource type="PackedScene" uid="uid://dn7caoo5uwtka" path="res://scenes/ORB Assets/ORB Walls.glb" id="5_uwsiw"]
 [ext_resource type="PackedScene" uid="uid://buwuexgtctynv" path="res://scenes/ORB Assets/ORB spawn.glb" id="6_a1a2d"]
 [ext_resource type="Material" uid="uid://dc7f7jrk5l01" path="res://materials/Marble015_2K-JPG.tres" id="7_abs8d"]
+[ext_resource type="Material" uid="uid://b7ueiq7joqtgi" path="res://materials/innerwallfinal.tres" id="8_81u8k"]
 [ext_resource type="Material" uid="uid://cf4du6wu173b8" path="res://materials/emmisbve.tres" id="8_iqxoq"]
 [ext_resource type="Material" uid="uid://beurgisx8mmwl" path="res://materials/outerwalls.tres" id="8_iw21x"]
 [ext_resource type="Material" uid="uid://b7exymtxqp47a" path="res://materials/emmisvewhite.tres" id="9_iqxoq"]
-[ext_resource type="Material" uid="uid://d4kqsvbys5v0k" path="res://materials/innerwalls.tres" id="9_iw21x"]
 [ext_resource type="PackedScene" uid="uid://dtgkxgf3nfcim" path="res://scenes/ORB Assets/ORB center.glb" id="10_iw21x"]
-[ext_resource type="Material" uid="uid://bwq6y25rsi1sy" path="res://materials/Tiles052_2K-JPG.tres" id="10_mkny8"]
 [ext_resource type="Script" uid="uid://b7q1t4kv2r6si" path="res://scenes/ORB!/lookat.gd" id="10_r03fp"]
 [ext_resource type="Material" uid="uid://bkvwjcdll6du5" path="res://materials/REFLECTIVE.tres" id="11_iqxoq"]
 [ext_resource type="PackedScene" uid="uid://dr4kotf4rhy4d" path="res://scenes/settings.tscn" id="20_16sg2"]
@@ -197,6 +196,9 @@ _data = {
 &"orb spin": SubResource("Animation_iqxoq")
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_r03fp"]
+size = Vector3(20.259798, 20.146078, 20.259798)
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1a5yb"]
 
 [node name="OrbWorld" type="Node3D" unique_id=1375736711]
@@ -209,7 +211,7 @@ environment = ExtResource("1_qpmb6")
 [node name="ORB Floor" parent="." unique_id=2097283532 instance=ExtResource("1_y2xap")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.007151246, 0, -0.020119667)
 
-[node name="Floor" parent="ORB Floor" index="0" unique_id=1629955997]
+[node name="Floor" parent="ORB Floor" index="0" unique_id=301396371]
 transform = Transform3D(29.877117, 0, 0, 0, 29.877117, 0, 0, 0, 29.877117, 0.03129959, 2.861023e-06, 0.04684639)
 surface_material_override/0 = ExtResource("2_uwsiw")
 
@@ -223,44 +225,44 @@ debug_color = Color(0.97652537, 0, 0.4147868, 0.41960785)
 [node name="ORB spawn" parent="." unique_id=1948643704 instance=ExtResource("6_a1a2d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6866689, 0.55192196, 0.9743781)
 
-[node name="Arrows" parent="ORB spawn" index="0" unique_id=1888589541]
+[node name="Arrows" parent="ORB spawn" index="0" unique_id=51034983]
 surface_material_override/0 = ExtResource("5_1a5yb")
 
-[node name="Mouse" parent="ORB spawn" index="1" unique_id=743472755]
+[node name="Mouse" parent="ORB spawn" index="1" unique_id=1340209582]
 surface_material_override/0 = ExtResource("5_1a5yb")
 surface_material_override/1 = ExtResource("11_iqxoq")
 
-[node name="Start Armory" parent="ORB spawn" index="2" unique_id=1880709788]
+[node name="Start Armory" parent="ORB spawn" index="2" unique_id=1573956811]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.269386, 1.7695144, -0.05389601)
-surface_material_override/0 = ExtResource("10_mkny8")
+surface_material_override/0 = ExtResource("8_81u8k")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="ORB spawn/Start Armory" index="0" unique_id=1834162483]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ORB spawn/Start Armory/StaticBody3D" unique_id=384212359]
 shape = SubResource("ConcavePolygonShape3D_r03fp")
 
-[node name="Armory Text" parent="ORB spawn" index="3" unique_id=535477692]
+[node name="Armory Text" parent="ORB spawn" index="3" unique_id=621363887]
 transform = Transform3D(0, -2.0959432, 1.7489913e-06, -1.2492795e-07, -1.7489913e-06, -2.0959432, 2.0959432, -1.04248004e-13, -1.2492795e-07, 22.82265, 5.310764, -0.02667427)
 surface_material_override/0 = ExtResource("5_a1a2d")
 
-[node name="Welcome to" parent="ORB spawn" index="4" unique_id=1745558929]
+[node name="Welcome to" parent="ORB spawn" index="4" unique_id=1396320112]
 transform = Transform3D(-2.9609346e-08, 0.6773829, -0.21265554, 9.295468e-09, -0.21265554, -0.6773829, -0.7099788, -3.1034162e-08, 1.3565465e-15, 21.995848, 3.4350796, -0.238029)
 surface_material_override/0 = ExtResource("9_iqxoq")
 script = ExtResource("10_r03fp")
 
-[node name="WASD" parent="ORB spawn" index="5" unique_id=2110119164]
+[node name="WASD" parent="ORB spawn" index="5" unique_id=929763357]
 surface_material_override/0 = ExtResource("9_iqxoq")
 
-[node name="Shoot" parent="ORB spawn" index="6" unique_id=2060849510]
+[node name="Shoot" parent="ORB spawn" index="6" unique_id=1211231360]
 surface_material_override/0 = ExtResource("9_iqxoq")
 
-[node name="Interact" parent="ORB spawn" index="7" unique_id=1988259216]
+[node name="Interact" parent="ORB spawn" index="7" unique_id=1359496149]
 surface_material_override/0 = ExtResource("9_iqxoq")
 
-[node name="E" parent="ORB spawn" index="8" unique_id=1404971509]
+[node name="E" parent="ORB spawn" index="8" unique_id=903668305]
 surface_material_override/0 = ExtResource("9_iqxoq")
 
-[node name="GUNS_001" parent="ORB spawn" index="9" unique_id=314965182]
+[node name="GUNS_001" parent="ORB spawn" index="9" unique_id=105226338]
 transform = Transform3D(0.7099788, 0, 0, 0, -5.078164e-07, -0.7099788, 0, 0.7099788, -5.078164e-07, 25.411177, 1.7899445, -4.524413)
 surface_material_override/0 = ExtResource("9_iqxoq")
 
@@ -276,7 +278,7 @@ enable_shadows = true
 [node name="ORB Walls" parent="." unique_id=38783015 instance=ExtResource("5_uwsiw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3788948, 0.13768291, 1.2868347)
 
-[node name="Box arrays 2" parent="ORB Walls" index="0" unique_id=1793675166]
+[node name="Box arrays 2" parent="ORB Walls" index="0" unique_id=2068193433]
 surface_material_override/0 = ExtResource("8_iqxoq")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="ORB Walls/Box arrays 2" index="0" unique_id=1141434570]
@@ -284,7 +286,7 @@ surface_material_override/0 = ExtResource("8_iqxoq")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ORB Walls/Box arrays 2/StaticBody3D" unique_id=1818009593]
 shape = SubResource("ConcavePolygonShape3D_3fwai")
 
-[node name="Box arrays" parent="ORB Walls" index="1" unique_id=1223695304]
+[node name="Box arrays" parent="ORB Walls" index="1" unique_id=488602931]
 transform = Transform3D(0, 3.5931094e-10, -0.0060282373, -0.0060282373, 3.5931094e-10, 2.1416601e-17, 3.5931094e-10, 0.0060282373, 3.5931091e-10, 25.548405, 2.3888216, -28.628265)
 surface_material_override/0 = SubResource("StandardMaterial3D_iqxoq")
 
@@ -293,7 +295,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_iqxoq")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ORB Walls/Box arrays/StaticBody3D" unique_id=522990758]
 shape = SubResource("ConcavePolygonShape3D_1a5yb")
 
-[node name="OUTER WALL" parent="ORB Walls" index="2" unique_id=1335578152]
+[node name="OUTER WALL" parent="ORB Walls" index="2" unique_id=700744372]
 transform = Transform3D(2.3285194e-09, 4.6879025e-09, -0.013022024, -7.664886e-10, -0.079643704, -7.6648865e-10, -0.013022024, 4.6879047e-09, -2.3285194e-09, -37.320885, 6.852372, 31.483593)
 surface_material_override/0 = ExtResource("8_iw21x")
 surface_material_override/1 = ExtResource("8_iw21x")
@@ -303,10 +305,10 @@ surface_material_override/1 = ExtResource("8_iw21x")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ORB Walls/OUTER WALL/StaticBody3D" unique_id=937282721]
 shape = SubResource("ConcavePolygonShape3D_nfxw6")
 
-[node name="INNER WALL" parent="ORB Walls" index="3" unique_id=22017496]
+[node name="INNER WALL" parent="ORB Walls" index="3" unique_id=2040775173]
 transform = Transform3D(-6.209386e-09, -1.2987208e-08, 0.013022024, 2.7327594e-09, -0.06188608, -2.732758e-09, 0.013022024, 1.29872015e-08, 6.2093855e-09, 29.46483, 8.108347, -28.109438)
-surface_material_override/0 = ExtResource("10_mkny8")
-surface_material_override/1 = ExtResource("9_iw21x")
+surface_material_override/0 = ExtResource("8_81u8k")
+surface_material_override/1 = ExtResource("8_81u8k")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="ORB Walls/INNER WALL" index="0" unique_id=826238787]
 
@@ -321,13 +323,20 @@ autoplay = &"orb spin"
 
 [node name="ORB center" parent="." unique_id=1134665887 instance=ExtResource("10_iw21x")]
 
-[node name="Orb" parent="ORB center" index="0" unique_id=755609806]
+[node name="Orb" parent="ORB center" index="0" unique_id=261573993]
 surface_material_override/0 = ExtResource("11_iqxoq")
 
-[node name="Orb ring" parent="ORB center" index="1" unique_id=602801465]
+[node name="Orb ring" parent="ORB center" index="1" unique_id=1177213023]
 surface_material_override/0 = ExtResource("7_abs8d")
 
-[node name="ORB title" parent="ORB center" index="2" unique_id=699248142]
+[node name="StaticBody3D" type="StaticBody3D" parent="ORB center/Orb ring" index="0" unique_id=1612389589]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4839225, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ORB center/Orb ring/StaticBody3D" unique_id=1456585496]
+transform = Transform3D(0.9999888, 0, 0, 0, 0.9999978, 0, 0, 0, 0.9999888, 0, 9.652547, 0)
+shape = SubResource("BoxShape3D_r03fp")
+
+[node name="ORB title" parent="ORB center" index="2" unique_id=1216057038]
 transform = Transform3D(3.1115642, 0, 0, 0, -1.3601077e-07, -3.111564, 0, 3.1115637, -1.3601078e-07, 0.002805397, 5.8224106, -0.040090173)
 surface_material_override/0 = ExtResource("11_iqxoq")
 
@@ -397,13 +406,13 @@ shape = SubResource("CapsuleShape3D_1a5yb")
 
 [node name="SettingsBG" parent="." unique_id=1297866643 instance=ExtResource("20_16sg2")]
 
-[node name="HomeButton" parent="SettingsBG" index="8" unique_id=348414637]
-process_mode = 3
-
 [editable path="ORB Floor"]
 [editable path="ORB spawn"]
 [editable path="HUD"]
 [editable path="ORB Walls"]
 [editable path="ORB center"]
 [editable path="FeelPlayer"]
-[editable path="SettingsBG"]
+[editable path="FeelPlayer/RecoilPivot/Camera3D/WeaponRig/Weapon/GLOCK"]
+[editable path="FeelPlayer/RecoilPivot/Camera3D/WeaponRig/Weapon/SMG"]
+[editable path="FeelPlayer/RecoilPivot/Camera3D/WeaponRig/Weapon/ORB GUN"]
+[editable path="FeelPlayer/RecoilPivot/Camera3D/WeaponRig/Weapon/ORB BULLET"]

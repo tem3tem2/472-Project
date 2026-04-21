@@ -1,4 +1,4 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://i4go668jgmuw"]
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cyjsv1wtg6w2f"]
 
 [ext_resource type="Texture2D" uid="uid://ba38qqlgtn5vy" path="res://materials/Metal041A_2K-JPG_Color.jpg" id="Color"]
 [ext_resource type="Texture2D" uid="uid://487k5vhbdy2m" path="res://materials/Metal041A_2K-JPG_Displacement.jpg" id="Displacement"]
@@ -19,6 +19,5 @@ heightmap_enabled = true
 heightmap_scale = 1.0
 heightmap_texture = ExtResource("Displacement")
 uv1_triplanar = true
-uv1_world_triplanar = true
 uv2_triplanar = true
 uv2_world_triplanar = true

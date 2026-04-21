@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dwiq5xgcho8c1"]
+
+[ext_resource type="Texture2D" uid="uid://w5jcipibga4t" path="res://materials/Scratches002_2K-PNG_Color.png" id="Color"]
+[ext_resource type="Texture2D" uid="uid://2aoqowtkw3rd" path="res://materials/Scratches002_2K-PNG_NormalGL.png" id="NormalGL"]
+
+[resource]
+albedo_texture = ExtResource("Color")
+normal_enabled = true
+normal_texture = ExtResource("NormalGL")
+uv1_scale = Vector3(12, 12, 12)
+uv1_triplanar = true

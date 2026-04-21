@@ -1,7 +1,7 @@
 extends Node
 
 const CONFIG_PATH := "user://settings.cfg"
-const DEFAULT_ENV_PATH := "res://default_env.tres"
+const DEFAULT_ENV_PATH := "res://materials/new_environment.tres"
 
 var env: Environment
 var master_volume: float = 100.0
