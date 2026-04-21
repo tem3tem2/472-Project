@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c1qwgyb2n8ap5" path="res://images/music.png" id="4_gjs24"]
 [ext_resource type="Texture2D" uid="uid://ev0mrmm0adsb" path="res://images/explosion.png" id="5_am25x"]
 [ext_resource type="Script" uid="uid://derauwla8785o" path="res://scenes/music_slider.gd" id="6_uhhto"]
-[ext_resource type="Script" path="res://scenes/sfx_slider.gd" id="8_1g033"]
+[ext_resource type="Script" uid="uid://bb04bhca74sm5" path="res://scenes/sfx_slider.gd" id="8_1g033"]
 [ext_resource type="Texture2D" uid="uid://vj0sta2t65vw" path="res://images/home.png" id="9_am25x"]
 [ext_resource type="Texture2D" uid="uid://d2167umq8df3f" path="res://images/Pink Toggle Set.png" id="11_1g033"]
 [ext_resource type="Texture2D" uid="uid://bm6865djy8i53" path="res://images/Black Toggle Set.png" id="12_01roj"]
@@ -19,6 +19,32 @@ corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ppmf"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 10
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uhhto"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1g033"]
+bg_color = Color(0.851769, 0.8517689, 0.85176885, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 10
+shadow_size = 10
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_4ytvr"]
 grow_begin = -4.0
@@ -73,32 +99,6 @@ corner_radius_bottom_left = 20
 corner_detail = 10
 shadow_size = 10
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ppmf"]
-bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-corner_detail = 10
-shadow_size = 10
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uhhto"]
-bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-corner_detail = 10
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1g033"]
-bg_color = Color(0.851769, 0.8517689, 0.85176885, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-corner_detail = 10
-shadow_size = 10
-
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_am25x"]
 thickness = 10
 
@@ -145,6 +145,19 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_mj5lg")
 script = ExtResource("1_gis3k")
+
+[node name="HomeButton" type="Button" parent="." unique_id=348414637]
+layout_mode = 0
+offset_left = 74.5
+offset_top = 430.5
+offset_right = 163.5
+offset_bottom = 519.5
+theme_override_styles/normal = SubResource("StyleBoxFlat_4ppmf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_uhhto")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1g033")
+icon = ExtResource("9_am25x")
+icon_alignment = 1
+expand_icon = true
 
 [node name="Label" type="Label" parent="." unique_id=1193382817]
 layout_mode = 1
@@ -255,20 +268,6 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_ufwb2")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_6cdou")
 theme_override_styles/hover = SubResource("StyleBoxFlat_i42df")
 text = "Done"
-
-[node name="HomeButton" type="Button" parent="." unique_id=348414637]
-process_mode = 4
-layout_mode = 0
-offset_left = 74.5
-offset_top = 430.5
-offset_right = 163.5
-offset_bottom = 519.5
-theme_override_styles/normal = SubResource("StyleBoxFlat_4ppmf")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_uhhto")
-theme_override_styles/hover = SubResource("StyleBoxFlat_1g033")
-icon = ExtResource("9_am25x")
-icon_alignment = 1
-expand_icon = true
 
 [node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1313016907]
 custom_minimum_size = Vector2(350, 150.375)
