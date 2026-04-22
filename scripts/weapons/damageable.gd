@@ -19,6 +19,9 @@ var _current_health: float
 func _ready() -> void:
 
 	_current_health = max_health
+	
+	if self.position == Vector3(-500, -500, -500):
+		queue_free()
 
 
 

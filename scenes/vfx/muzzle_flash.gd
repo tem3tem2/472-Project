@@ -9,6 +9,3 @@ func _ready() -> void:
 	if timer != null:
 
 		timer.timeout.connect(queue_free)
-
-
-

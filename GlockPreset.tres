@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="WeaponConfig" format=3 uid="uid://c1o5jp46gfeqk"]
+
+[ext_resource type="AudioStream" uid="uid://cts2vrg5emns3" path="res://Sounds/corrected gun shot.mp3" id="1_re3pd"]
+[ext_resource type="PackedScene" path="res://scenes/vfx/ImpactEffect.tscn" id="2_4cwov"]
+[ext_resource type="PackedScene" uid="uid://b602os07io4m6" path="res://scenes/ORB Assets/SMG.glb" id="3_6rs7n"]
+[ext_resource type="PackedScene" uid="uid://bymkobftw6xkl" path="res://scenes/vfx/MuzzleFlash.tscn" id="4_6aq8m"]
+[ext_resource type="AudioStream" uid="uid://bfgkuux3ivdj8" path="res://Sounds/gun-reload-2-395177.mp3" id="5_ua21w"]
+[ext_resource type="Script" uid="uid://cv7jxbtgf8ks6" path="res://scripts/weapons/weapon_config.gd" id="6_xffu2"]
+
+[resource]
+script = ExtResource("6_xffu2")
+display_name = "GLOCK"
+fire_mode = 0
+damage = 65.0
+fire_rate = 3.0
+mag_size = 10
+reload_time = 2.8
+hip_spread = 3.5
+ads_spread = 0.1
+spread_increase_per_shot = 0.35
+recoil_pattern = Array[Vector2]([Vector2(0.2, -4.5), Vector2(-0.1, -4.2), Vector2(0.25, -4.8), Vector2(-0.2, -5), Vector2(0.15, -4.6), Vector2(-0.15, -4.9), Vector2(0.2, -5.1), Vector2(-0.1, -4.7)])
+recoil_reset_speed = 5.0
+model_scene = ExtResource("3_6rs7n")
+muzzle_flash_scene = ExtResource("4_6aq8m")
+impact_effect_scene = ExtResource("2_4cwov")
+fire_sfx = ExtResource("1_re3pd")
+reload_sfx = ExtResource("5_ua21w")

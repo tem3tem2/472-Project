@@ -16,7 +16,7 @@ class_name PlayerFeelConfig
 
 @export_group("Jump")
 
-@export var jump_force: float = 4.5
+@export var jump_force: float = 15
 
 
 

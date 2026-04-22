@@ -169,15 +169,15 @@ Follow these steps to create a custom weapon:
 2. **Configure your weapon:**
    - Open `MyNewGunConfig.tres` in the inspector.
    - Adjust:
-     - `display_name` – e.g., "SMG", "Shotgun"
-     - `damage` – e.g., 15.0 for SMG, 50.0 for shotgun
-     - `fire_rate` – e.g., 15.0 for SMG, 2.0 for shotgun
-     - `mag_size` – e.g., 30 for SMG, 8 for shotgun
-     - `reload_time` – e.g., 1.5 for SMG, 3.0 for shotgun
-     - `hip_spread` / `ads_spread` – larger for SMG, smaller for sniper
-     - `recoil_pattern` – customize the pattern array
-     - `recoil_reset_speed` – how quickly recoil returns
-     - Assign different SFX/VFX if desired.
+	 - `display_name` – e.g., "SMG", "Shotgun"
+	 - `damage` – e.g., 15.0 for SMG, 50.0 for shotgun
+	 - `fire_rate` – e.g., 15.0 for SMG, 2.0 for shotgun
+	 - `mag_size` – e.g., 30 for SMG, 8 for shotgun
+	 - `reload_time` – e.g., 1.5 for SMG, 3.0 for shotgun
+	 - `hip_spread` / `ads_spread` – larger for SMG, smaller for sniper
+	 - `recoil_pattern` – customize the pattern array
+	 - `recoil_reset_speed` – how quickly recoil returns
+	 - Assign different SFX/VFX if desired.
 
 3. **Assign to weapon:**
    - Open `scenes/FeelPlayer.tscn`.
@@ -197,7 +197,3 @@ Follow these steps to create a custom weapon:
 - For now, `FeelPlayer` is the easiest way to test weapons. Future docs will cover using Cobra's weapon system with a completely different player controller.
 - All weapons share the same `WeaponBase` logic; only the config data changes.
 - Melee weapons use `MeleeConfig` and `MeleeWeapon` separately; follow a similar pattern to create new melee weapons.
-
-
-
-

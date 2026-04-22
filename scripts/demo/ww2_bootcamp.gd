@@ -13,6 +13,3 @@ func _ready() -> void:
 		hud.connect_weapon(weapon)
 	else:
 		push_error("WW2Bootcamp: Could not find active weapon from player.weapon_rig")
-
-
-

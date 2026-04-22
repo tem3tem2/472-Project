@@ -54,4 +54,3 @@ func _process(_delta: float) -> void:
 				push_warning("ArmoryWeaponSpot: Could not find Weapon node on player")
 			if weapon_config == null:
 				push_warning("ArmoryWeaponSpot: weapon_config is null")
-

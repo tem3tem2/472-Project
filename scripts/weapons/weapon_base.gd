@@ -183,6 +183,33 @@ func apply_config(new_config: WeaponConfig) -> void:
 		return
 
 	config = new_config
+	var weaponName = config.display_name
+	
+	match weaponName:
+		"GLOCK":
+			print("Hello I am a GLOCK")
+			var Glock = self.get_child(0)
+			Glock.visible = true;
+			self.get_child(1).visible = false;
+			self.get_child(4).visible = false;
+			self.projectile_scene = null;
+		"SMG":
+			print("Hello I am a SMG")
+			var SMG = self.get_child(1)
+			SMG.visible = true;
+			self.get_child(0).visible = false;
+			self.get_child(4).visible = false;
+			self.projectile_scene = null;
+		"ORB":
+			print("Hello I am a Orb")
+			var ORB = self.get_child(4)
+			ORB.visible = true;
+			self.get_child(0).visible = false;
+			self.get_child(1).visible = false;
+			self.projectile_scene = preload("res://scenes/weapons/Projectile.tscn");
+			#self.projectile_scene = preload("res://scenes/ORB Assets/ORB BULLET.glb")
+		_:
+			print("Oh no")
 
 	if config.mag_size <= 0:
 
@@ -270,6 +297,7 @@ func _perform_shot() -> void:
 	# Get forward direction from camera transform (base direction without spread)
 
 	var base_direction: Vector3 = -camera_transform.basis.z.normalized()
+	print("firing direction: ", base_direction)
 
 	var aim_basis: Basis = camera_transform.basis
 
@@ -303,8 +331,10 @@ func _perform_shot() -> void:
 			var right: Vector3 = aim_basis.x.normalized()
 			dir = dir.rotated(Vector3.UP, yaw_offset)
 			dir = dir.rotated(right, pitch_offset).normalized()
-		
-		_spawn_projectile(projectile_origin, dir)
+		#
+		#var aim_point: Vector3 = origin + dir * MAX_RAY_DISTANCE
+		#var corrected_dir: Vector3 = (aim_point - projectile_origin).normalized()
+		_spawn_projectile(origin, dir)
 
 func _perform_single_pellet_hitscan(origin: Vector3, base_direction: Vector3, aim_basis: Basis) -> void:
 	# Start from base_direction (already camera-based)

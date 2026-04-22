@@ -50,13 +50,13 @@ enum FireMode { SEMI_AUTO, FULL_AUTO, BURST }
 
 @export var recoil_pattern: Array[Vector2] = [
 
-    Vector2(0.0, -1.5),
+	Vector2(0.0, -1.5),
 
-    Vector2(0.2, -1.2),
+	Vector2(0.2, -1.2),
 
-    Vector2(-0.15, -1.0),
+	Vector2(-0.15, -1.0),
 
-    Vector2(0.0, -0.9),
+	Vector2(0.0, -0.9),
 
 ]
 

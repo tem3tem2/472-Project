@@ -5,20 +5,35 @@
 [ext_resource type="PackedScene" uid="uid://bxy08s4oj8vtt" path="res://scenes/ORB Assets/ORB Floor.glb" id="1_y2xap"]
 [ext_resource type="PackedScene" uid="uid://c0falpon6ymtw" path="res://scenes/FeelPlayer.tscn" id="2_1f23h"]
 [ext_resource type="Material" uid="uid://dl0bd8oqdtult" path="res://materials/Tiles107_2K-JPG.tres" id="2_uwsiw"]
-[ext_resource type="Material" uid="uid://twn7mvppy1ns" path="res://materials/Fireball_Material.tres" id="5_1a5yb"]
+[ext_resource type="Material" path="res://materials/Fireball_Material.tres" id="5_1a5yb"]
 [ext_resource type="Material" uid="uid://bfispwjmga352" path="res://materials/Pizza002_2K-JPG.tres" id="5_a1a2d"]
 [ext_resource type="PackedScene" uid="uid://bi8opghjrednq" path="res://scenes/HUD.tscn" id="5_jix0w"]
 [ext_resource type="PackedScene" uid="uid://dn7caoo5uwtka" path="res://scenes/ORB Assets/ORB Walls.glb" id="5_uwsiw"]
 [ext_resource type="PackedScene" uid="uid://buwuexgtctynv" path="res://scenes/ORB Assets/ORB spawn.glb" id="6_a1a2d"]
 [ext_resource type="Material" uid="uid://dc7f7jrk5l01" path="res://materials/Marble015_2K-JPG.tres" id="7_abs8d"]
-[ext_resource type="Material" uid="uid://b7ueiq7joqtgi" path="res://materials/innerwallfinal.tres" id="8_81u8k"]
+[ext_resource type="Material" path="res://materials/innerwallfinal.tres" id="8_81u8k"]
 [ext_resource type="Material" uid="uid://cf4du6wu173b8" path="res://materials/emmisbve.tres" id="8_iqxoq"]
 [ext_resource type="Material" uid="uid://beurgisx8mmwl" path="res://materials/outerwalls.tres" id="8_iw21x"]
 [ext_resource type="Material" uid="uid://b7exymtxqp47a" path="res://materials/emmisvewhite.tres" id="9_iqxoq"]
 [ext_resource type="PackedScene" uid="uid://dtgkxgf3nfcim" path="res://scenes/ORB Assets/ORB center.glb" id="10_iw21x"]
 [ext_resource type="Script" uid="uid://b7q1t4kv2r6si" path="res://scenes/ORB!/lookat.gd" id="10_r03fp"]
 [ext_resource type="Material" uid="uid://bkvwjcdll6du5" path="res://materials/REFLECTIVE.tres" id="11_iqxoq"]
+[ext_resource type="Resource" uid="uid://irfchtkgy84f" path="res://config/Crosshair_Arcade.tres" id="14_7lkb8"]
 [ext_resource type="PackedScene" uid="uid://dr4kotf4rhy4d" path="res://scenes/settings.tscn" id="20_16sg2"]
+[ext_resource type="PackedScene" uid="uid://brc4lttl1piek" path="res://scenes/Dummy.tscn" id="20_v51q2"]
+[ext_resource type="Resource" uid="uid://c1o5jp46gfeqk" path="res://GlockPreset.tres" id="21_7lkb8"]
+[ext_resource type="PackedScene" uid="uid://duxliptgoe22r" path="res://scenes/ORB Assets/ORB GUN.glb" id="21_v1ecu"]
+[ext_resource type="Material" uid="uid://6uxelyvnw2gm" path="res://materials/Plastic017A_2K-JPG.tres" id="22_w7a35"]
+[ext_resource type="PackedScene" uid="uid://b602os07io4m6" path="res://scenes/ORB Assets/SMG.glb" id="23_naaxg"]
+[ext_resource type="Material" uid="uid://dwiq5xgcho8c1" path="res://materials/Scratches002_2K-PNG.tres" id="24_q8ltp"]
+[ext_resource type="Material" uid="uid://cbqa55y6q0dbd" path="res://materials/Leather026_2K-JPG.tres" id="25_3medp"]
+[ext_resource type="Material" uid="uid://i4go668jgmuw" path="res://materials/Metal041A_2K-JPG.tres" id="26_7lkb8"]
+[ext_resource type="Material" uid="uid://bdtidggxhb0nf" path="res://materials/Fabric004_2K-JPG.tres" id="27_cr5iy"]
+[ext_resource type="PackedScene" uid="uid://b6c8ryj7rl7ay" path="res://scenes/ORB Assets/GLOCK.glb" id="28_r2rcs"]
+[ext_resource type="Material" path="res://materials/Wall_Default.tres" id="29_jnhod"]
+[ext_resource type="Script" uid="uid://cmyp11vwojma0" path="res://scripts/demo/armory_weapon_spot.gd" id="30_3medp"]
+[ext_resource type="Resource" uid="uid://bpvebbohiubnr" path="res://config/SMGConfig.tres" id="32_q8ltp"]
+[ext_resource type="Resource" uid="uid://defftg725q1f2" path="res://OrbPreset.tres" id="34_cr5iy"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_y2xap"]
 margin = 0.1
@@ -196,14 +211,24 @@ _data = {
 &"orb spin": SubResource("Animation_iqxoq")
 }
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_r03fp"]
-size = Vector3(20.259798, 20.146078, 20.259798)
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_7lkb8"]
+height = 1.909811
+radius = 10.124512
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_7lkb8"]
+radius = 6.1830792
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1a5yb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u3bh3"]
+size = Vector3(2.2612915, 4.1134033, 2.1831055)
 
 [node name="OrbWorld" type="Node3D" unique_id=1375736711]
 process_mode = 3
 script = ExtResource("1_v51q2")
+target_scene = ExtResource("20_v51q2")
+spawn_area_size = Vector3(40, 0, 40)
+target_radius = 0.314
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=874190821]
 environment = ExtResource("1_qpmb6")
@@ -211,7 +236,7 @@ environment = ExtResource("1_qpmb6")
 [node name="ORB Floor" parent="." unique_id=2097283532 instance=ExtResource("1_y2xap")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.007151246, 0, -0.020119667)
 
-[node name="Floor" parent="ORB Floor" index="0" unique_id=1629955997]
+[node name="Floor" parent="ORB Floor" index="0" unique_id=1591500287]
 transform = Transform3D(29.877117, 0, 0, 0, 29.877117, 0, 0, 0, 29.877117, 0.03129959, 2.861023e-06, 0.04684639)
 surface_material_override/0 = ExtResource("2_uwsiw")
 
@@ -225,14 +250,14 @@ debug_color = Color(0.97652537, 0, 0.4147868, 0.41960785)
 [node name="ORB spawn" parent="." unique_id=1948643704 instance=ExtResource("6_a1a2d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6866689, 0.55192196, 0.9743781)
 
-[node name="Arrows" parent="ORB spawn" index="0" unique_id=1888589541]
+[node name="Arrows" parent="ORB spawn" index="0" unique_id=1505601811]
 surface_material_override/0 = ExtResource("5_1a5yb")
 
-[node name="Mouse" parent="ORB spawn" index="1" unique_id=743472755]
+[node name="Mouse" parent="ORB spawn" index="1" unique_id=226051334]
 surface_material_override/0 = ExtResource("5_1a5yb")
 surface_material_override/1 = ExtResource("11_iqxoq")
 
-[node name="Start Armory" parent="ORB spawn" index="2" unique_id=1880709788]
+[node name="Start Armory" parent="ORB spawn" index="2" unique_id=1619312036]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.269386, 1.7695144, -0.05389601)
 surface_material_override/0 = ExtResource("8_81u8k")
 
@@ -241,32 +266,34 @@ surface_material_override/0 = ExtResource("8_81u8k")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ORB spawn/Start Armory/StaticBody3D" unique_id=384212359]
 shape = SubResource("ConcavePolygonShape3D_r03fp")
 
-[node name="Armory Text" parent="ORB spawn" index="3" unique_id=535477692]
+[node name="Armory Text" parent="ORB spawn" index="3" unique_id=1818927122]
 transform = Transform3D(0, -2.0959432, 1.7489913e-06, -1.2492795e-07, -1.7489913e-06, -2.0959432, 2.0959432, -1.04248004e-13, -1.2492795e-07, 22.82265, 5.310764, -0.02667427)
 surface_material_override/0 = ExtResource("5_a1a2d")
 
-[node name="Welcome to" parent="ORB spawn" index="4" unique_id=1745558929]
+[node name="Welcome to" parent="ORB spawn" index="4" unique_id=817273353]
 transform = Transform3D(-2.9609346e-08, 0.6773829, -0.21265554, 9.295468e-09, -0.21265554, -0.6773829, -0.7099788, -3.1034162e-08, 1.3565465e-15, 21.995848, 3.4350796, -0.238029)
 surface_material_override/0 = ExtResource("9_iqxoq")
 script = ExtResource("10_r03fp")
 
-[node name="WASD" parent="ORB spawn" index="5" unique_id=2110119164]
+[node name="WASD" parent="ORB spawn" index="5" unique_id=191776311]
 surface_material_override/0 = ExtResource("9_iqxoq")
 
-[node name="Shoot" parent="ORB spawn" index="6" unique_id=2060849510]
+[node name="Shoot" parent="ORB spawn" index="6" unique_id=139733564]
 surface_material_override/0 = ExtResource("9_iqxoq")
 
-[node name="Interact" parent="ORB spawn" index="7" unique_id=1988259216]
+[node name="Interact" parent="ORB spawn" index="7" unique_id=897251958]
 surface_material_override/0 = ExtResource("9_iqxoq")
 
-[node name="E" parent="ORB spawn" index="8" unique_id=1404971509]
+[node name="E" parent="ORB spawn" index="8" unique_id=1135800995]
 surface_material_override/0 = ExtResource("9_iqxoq")
 
-[node name="GUNS_001" parent="ORB spawn" index="9" unique_id=314965182]
+[node name="GUNS_001" parent="ORB spawn" index="9" unique_id=625282490]
 transform = Transform3D(0.7099788, 0, 0, 0, -5.078164e-07, -0.7099788, 0, 0.7099788, -5.078164e-07, 25.411177, 1.7899445, -4.524413)
 surface_material_override/0 = ExtResource("9_iqxoq")
 
 [node name="HUD" parent="." unique_id=283320846 instance=ExtResource("5_jix0w")]
+crosshair_config = ExtResource("14_7lkb8")
+player_path = NodePath("../FeelPlayer")
 
 [node name="ReflectionProbe" type="ReflectionProbe" parent="." unique_id=1307418398]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3409119, 7.921833, -0.6332779)
@@ -278,7 +305,7 @@ enable_shadows = true
 [node name="ORB Walls" parent="." unique_id=38783015 instance=ExtResource("5_uwsiw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3788948, 0.13768291, 1.2868347)
 
-[node name="Box arrays 2" parent="ORB Walls" index="0" unique_id=1793675166]
+[node name="Box arrays 2" parent="ORB Walls" index="0" unique_id=1638590669]
 surface_material_override/0 = ExtResource("8_iqxoq")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="ORB Walls/Box arrays 2" index="0" unique_id=1141434570]
@@ -286,7 +313,7 @@ surface_material_override/0 = ExtResource("8_iqxoq")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ORB Walls/Box arrays 2/StaticBody3D" unique_id=1818009593]
 shape = SubResource("ConcavePolygonShape3D_3fwai")
 
-[node name="Box arrays" parent="ORB Walls" index="1" unique_id=1223695304]
+[node name="Box arrays" parent="ORB Walls" index="1" unique_id=73331845]
 transform = Transform3D(0, 3.5931094e-10, -0.0060282373, -0.0060282373, 3.5931094e-10, 2.1416601e-17, 3.5931094e-10, 0.0060282373, 3.5931091e-10, 25.548405, 2.3888216, -28.628265)
 surface_material_override/0 = SubResource("StandardMaterial3D_iqxoq")
 
@@ -295,7 +322,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_iqxoq")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ORB Walls/Box arrays/StaticBody3D" unique_id=522990758]
 shape = SubResource("ConcavePolygonShape3D_1a5yb")
 
-[node name="OUTER WALL" parent="ORB Walls" index="2" unique_id=1335578152]
+[node name="OUTER WALL" parent="ORB Walls" index="2" unique_id=1791360641]
 transform = Transform3D(2.3285194e-09, 4.6879025e-09, -0.013022024, -7.664886e-10, -0.079643704, -7.6648865e-10, -0.013022024, 4.6879047e-09, -2.3285194e-09, -37.320885, 6.852372, 31.483593)
 surface_material_override/0 = ExtResource("8_iw21x")
 surface_material_override/1 = ExtResource("8_iw21x")
@@ -305,7 +332,7 @@ surface_material_override/1 = ExtResource("8_iw21x")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ORB Walls/OUTER WALL/StaticBody3D" unique_id=937282721]
 shape = SubResource("ConcavePolygonShape3D_nfxw6")
 
-[node name="INNER WALL" parent="ORB Walls" index="3" unique_id=22017496]
+[node name="INNER WALL" parent="ORB Walls" index="3" unique_id=398438236]
 transform = Transform3D(-6.209386e-09, -1.2987208e-08, 0.013022024, 2.7327594e-09, -0.06188608, -2.732758e-09, 0.013022024, 1.29872015e-08, 6.2093855e-09, 29.46483, 8.108347, -28.109438)
 surface_material_override/0 = ExtResource("8_81u8k")
 surface_material_override/1 = ExtResource("8_81u8k")
@@ -323,20 +350,26 @@ autoplay = &"orb spin"
 
 [node name="ORB center" parent="." unique_id=1134665887 instance=ExtResource("10_iw21x")]
 
-[node name="Orb" parent="ORB center" index="0" unique_id=755609806]
+[node name="Orb" parent="ORB center" index="0" unique_id=1377659298]
 surface_material_override/0 = ExtResource("11_iqxoq")
 
-[node name="Orb ring" parent="ORB center" index="1" unique_id=602801465]
+[node name="Orb ring" parent="ORB center" index="1" unique_id=166348682]
 surface_material_override/0 = ExtResource("7_abs8d")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="ORB center/Orb ring" index="0" unique_id=1612389589]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4839225, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ORB center/Orb ring/StaticBody3D" unique_id=1456585496]
-transform = Transform3D(0.9999888, 0, 0, 0, 0.9999978, 0, 0, 0, 0.9999888, 0, 9.652547, 0)
-shape = SubResource("BoxShape3D_r03fp")
+[node name="BaseCollisionShape3D" type="CollisionShape3D" parent="ORB center/Orb ring/StaticBody3D" unique_id=1456585496]
+transform = Transform3D(0.99999416, 0, 0, 0, 0.9999978, 0, 0, 0, 0.99999416, 0, 0.11116561, 0.079940766)
+shape = SubResource("CylinderShape3D_7lkb8")
+debug_color = Color(0, 0, 0, 0.41960785)
 
-[node name="ORB title" parent="ORB center" index="2" unique_id=699248142]
+[node name="OrbCollisionShape3D" type="CollisionShape3D" parent="ORB center/Orb ring/StaticBody3D" unique_id=69193734]
+transform = Transform3D(0.9999998, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999998, 0.042660274, 4.902759, 0.2289147)
+shape = SubResource("SphereShape3D_7lkb8")
+debug_color = Color(0, 0, 0, 0.41960785)
+
+[node name="ORB title" parent="ORB center" index="2" unique_id=746667674]
 transform = Transform3D(3.1115642, 0, 0, 0, -1.3601077e-07, -3.111564, 0, 3.1115637, -1.3601078e-07, 0.002805397, 5.8224106, -0.040090173)
 surface_material_override/0 = ExtResource("11_iqxoq")
 
@@ -404,7 +437,122 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 26.6
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6134523, 0)
 shape = SubResource("CapsuleShape3D_1a5yb")
 
+[node name="Weapon" parent="FeelPlayer/RecoilPivot/Camera3D/WeaponRig" parent_id_path=PackedInt32Array(1767298164, 125028218) index="0" unique_id=366159198]
+config = ExtResource("21_7lkb8")
+
+[node name="ORB GUN" parent="FeelPlayer/RecoilPivot/Camera3D/WeaponRig/Weapon" index="4" unique_id=976118165]
+visible = false
+
+[node name="Sphere" parent="FeelPlayer/RecoilPivot/Camera3D/WeaponRig/Weapon/ORB GUN" index="0" unique_id=1253759616]
+transform = Transform3D(9.9177555e-08, 4.9588795e-08, 1.6639239, 1.6639239, 4.958876e-08, -9.9177555e-08, -4.9588756e-08, 1.6639239, -4.958875e-08, 0.78900146, 1.2117679, 1.1656113)
+visible = true
+
+[node name="Orb" parent="FeelPlayer/RecoilPivot/Camera3D/WeaponRig/Weapon/ORB BULLET" parent_id_path=PackedInt32Array(1767298164, 221729939) index="0" unique_id=1170909365]
+visible = false
+
 [node name="SettingsBG" parent="." unique_id=1297866643 instance=ExtResource("20_16sg2")]
+visible = false
+
+[node name="ORB GUN2" parent="." unique_id=1475040234 instance=ExtResource("21_v1ecu")]
+transform = Transform3D(0.06449045, -0.13542593, 0.0008953545, -0.13412079, -0.06400365, -0.020375123, 0.01877751, 0.007959431, -0.14860703, 28.329908, 2.4733613, -2.869134)
+
+[node name="Sphere" parent="ORB GUN2" index="0" unique_id=1253759616]
+transform = Transform3D(9.9177576e-08, 4.9588795e-08, 1.6639239, 1.6639239, 4.9588788e-08, -9.917757e-08, -4.9588785e-08, 1.6639239, -4.9588774e-08, -1.7164192, 0.6144786, 2.428648)
+surface_material_override/0 = ExtResource("11_iqxoq")
+surface_material_override/1 = ExtResource("22_w7a35")
+
+[node name="SMGDISPLAY" parent="." unique_id=113242065 instance=ExtResource("23_naaxg")]
+transform = Transform3D(-0.24999972, -0.00037965958, 1.6595447e-11, 0, -1.0927847e-08, -0.25, 0.00037965958, -0.24999972, 1.0927835e-08, 26.90433, 2.4224327, -3.4557621)
+
+[node name="Cube_016" parent="SMGDISPLAY" index="0" unique_id=27789043]
+transform = Transform3D(0.23665698, 0, 2.1684043e-18, 3.2014214e-10, 0.09843783, 2.784985e-16, -1.0408341e-17, 1.6249031e-15, 0.08976448, 3.3122568, 0.3371122, 0)
+surface_material_override/0 = ExtResource("24_q8ltp")
+surface_material_override/1 = ExtResource("24_q8ltp")
+surface_material_override/2 = ExtResource("25_3medp")
+surface_material_override/3 = ExtResource("24_q8ltp")
+surface_material_override/4 = ExtResource("26_7lkb8")
+surface_material_override/5 = ExtResource("27_cr5iy")
+surface_material_override/6 = ExtResource("11_iqxoq")
+surface_material_override/7 = ExtResource("25_3medp")
+surface_material_override/8 = ExtResource("24_q8ltp")
+surface_material_override/9 = ExtResource("25_3medp")
+surface_material_override/10 = ExtResource("26_7lkb8")
+surface_material_override/11 = ExtResource("25_3medp")
+surface_material_override/12 = ExtResource("5_1a5yb")
+surface_material_override/13 = ExtResource("5_1a5yb")
+
+[node name="GLOCKDISPLAY" parent="." unique_id=1317478076 instance=ExtResource("28_r2rcs")]
+transform = Transform3D(0.25, 0, 0, 0, -1.0927847e-08, -0.25, 0, 0.25, -1.0927847e-08, 24.227375, 2.4224327, -4.1228867)
+
+[node name="Cube_001" parent="GLOCKDISPLAY" index="0" unique_id=970632921]
+transform = Transform3D(0.99999976, 0, -2.1175824e-22, 0, 0.99999976, -8.351869e-23, -2.1175824e-22, -8.35187e-23, 0.99999976, -1.7164207, 2.4273882, 0)
+surface_material_override/0 = ExtResource("29_jnhod")
+surface_material_override/1 = ExtResource("25_3medp")
+surface_material_override/3 = ExtResource("11_iqxoq")
+surface_material_override/4 = ExtResource("24_q8ltp")
+
+[node name="Dummy" parent="." unique_id=1186717456 instance=ExtResource("20_v51q2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.194372, 0.7086514, 3.54775)
+visible = false
+
+[node name="Timer" type="Timer" parent="." unique_id=1401009869]
+autostart = true
+
+[node name="GLOCKSpot" type="Area3D" parent="." unique_id=222798281]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.930634, 0.41745925, -2.9895275)
+script = ExtResource("30_3medp")
+weapon_config = ExtResource("21_7lkb8")
+display_name = "GLOCK"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GLOCKSpot" unique_id=572564331]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04449463, 1.0567017, 0.34155273)
+shape = SubResource("BoxShape3D_u3bh3")
+
+[node name="PromptLabel" type="Label3D" parent="GLOCKSpot" unique_id=165999222]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5382495, 0)
+billboard = 1
+text = "Press E to equip Pistol
+"
+outline_size = 8
+
+[node name="SMGSpot" type="Area3D" parent="." unique_id=369215349]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.939558, 0.41745925, -2.9895275)
+script = ExtResource("30_3medp")
+weapon_config = ExtResource("32_q8ltp")
+display_name = "SMG"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SMGSpot" unique_id=1235592688]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38064575, 1.0567017, 0.34155273)
+shape = SubResource("BoxShape3D_u3bh3")
+
+[node name="PromptLabel" type="Label3D" parent="SMGSpot" unique_id=1659948496]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3049717, 1.5382495, 0)
+billboard = 1
+text = "Press E to equip SMG
+
+"
+outline_size = 8
+
+[node name="ORBSpot" type="Area3D" parent="." unique_id=1266502062]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.2809, 0.41745925, -2.9895275)
+script = ExtResource("30_3medp")
+weapon_config = ExtResource("34_cr5iy")
+display_name = "ORB"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ORBSpot" unique_id=327531829]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38064575, 1.0567017, 0.34155273)
+shape = SubResource("BoxShape3D_u3bh3")
+
+[node name="PromptLabel" type="Label3D" parent="ORBSpot" unique_id=293280871]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3049717, 1.5382495, 0)
+billboard = 1
+text = "Press E to equip ORB
+
+
+"
+outline_size = 8
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 
 [editable path="ORB Floor"]
 [editable path="ORB spawn"]
@@ -417,3 +565,6 @@ shape = SubResource("CapsuleShape3D_1a5yb")
 [editable path="FeelPlayer/RecoilPivot/Camera3D/WeaponRig/Weapon/ORB GUN"]
 [editable path="FeelPlayer/RecoilPivot/Camera3D/WeaponRig/Weapon/ORB BULLET"]
 [editable path="SettingsBG"]
+[editable path="ORB GUN2"]
+[editable path="SMGDISPLAY"]
+[editable path="GLOCKDISPLAY"]

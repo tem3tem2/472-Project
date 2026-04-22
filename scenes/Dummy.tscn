@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=3]
+[gd_scene format=3 uid="uid://brc4lttl1piek"]
 
-[ext_resource type="Script" path="res://scripts/weapons/damageable.gd" id="1_damageable"]
-[ext_resource type="Resource" path="res://materials/Target_Front_Default.tres" id="2_target_front"]
-[ext_resource type="Resource" path="res://materials/Target_Base_Default.tres" id="3_target_base"]
+[ext_resource type="Script" uid="uid://csbrae37u8y4h" path="res://scripts/weapons/damageable.gd" id="1_damageable"]
+[ext_resource type="Material" path="res://materials/Target_Front_Default.tres" id="2_target_front"]
+[ext_resource type="Material" path="res://materials/Target_Base_Default.tres" id="3_target_base"]
+[ext_resource type="PackedScene" uid="uid://murs20ek6g8k" path="res://scenes/ORB Assets/ORBTarget.glb" id="4_de8r6"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_plate"]
-size = Vector3(0.5, 1.5, 0.2)
+[sub_resource type="SphereShape3D" id="SphereShape3D_g20qn"]
+radius = 0.31409228
 
 [sub_resource type="BoxMesh" id="BoxMesh_plate"]
 size = Vector3(0.5, 1.5, 0.2)
@@ -13,20 +14,25 @@ size = Vector3(0.5, 1.5, 0.2)
 [sub_resource type="BoxMesh" id="BoxMesh_base"]
 size = Vector3(0.6, 0.2, 0.4)
 
-[node name="Dummy" type="StaticBody3D"]
+[node name="Dummy" type="StaticBody3D" unique_id=1223123311]
 script = ExtResource("1_damageable")
-max_health = 100.0
+max_health = 1.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
-shape = SubResource("BoxShape3D_plate")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=568118791]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8800302, 0)
+shape = SubResource("SphereShape3D_g20qn")
 
-[node name="Plate" type="MeshInstance3D" parent="."]
+[node name="Plate" type="MeshInstance3D" parent="." unique_id=1786404157]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+visible = false
 mesh = SubResource("BoxMesh_plate")
 surface_material_override/0 = ExtResource("2_target_front")
 
-[node name="Base" type="MeshInstance3D" parent="."]
+[node name="Base" type="MeshInstance3D" parent="." unique_id=1463532892]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+visible = false
 mesh = SubResource("BoxMesh_base")
 surface_material_override/0 = ExtResource("3_target_base")
+
+[node name="ORBTarget" parent="." unique_id=1315430194 instance=ExtResource("4_de8r6")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.6105774, 0)

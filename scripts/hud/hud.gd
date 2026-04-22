@@ -52,6 +52,7 @@ var _player: Node
 # only for ammo polling fallback
 var _last_ammo_current: int = -1
 var _last_ammo_max: int = -1
+var _last_shot_was_hit: bool = false
 
 # HUD stat colors
 var COLOR_BAD: Color = Color(1.0, 0.20, 0.20, 1.0)
@@ -181,6 +182,8 @@ func _on_hit_confirmed(target: Node) -> void:
 func _on_kill_confirmed(target: Node) -> void:
 	if target == null:
 		return
+		
+	_last_shot_was_hit = true
 
 	if not _crosshair_show_hitmarker:
 		_targets_hit += 1
@@ -300,13 +303,20 @@ func set_profile_name(profile_name: String) -> void:
 	profile_label.text = "Profile: %s" % profile_name
 
 func _on_shot_fired() -> void:
+	_last_shot_was_hit = false
 	_shots_fired += 1
 	_update_stats_labels()
+	
+	await get_tree().process_frame #stall a frame to check if bullet hits
+	
+	if not _last_shot_was_hit:
+		_current_streak = 0
+		_update_stats_labels()
 
 func _update_stats_labels() -> void:
 	var accuracy: float = 0.0
 	if _shots_fired > 0:
-		accuracy = float(_shots_hit) / float(_shots_fired) * 100.0
+		accuracy = float(_targets_hit) / float(_shots_fired) * 100.0
 
 	if stats_targets_label:
 		stats_targets_label.text = "Orbs Hit: %d" % _targets_hit
