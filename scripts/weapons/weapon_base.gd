@@ -331,9 +331,6 @@ func _perform_shot() -> void:
 			var right: Vector3 = aim_basis.x.normalized()
 			dir = dir.rotated(Vector3.UP, yaw_offset)
 			dir = dir.rotated(right, pitch_offset).normalized()
-		#
-		#var aim_point: Vector3 = origin + dir * MAX_RAY_DISTANCE
-		#var corrected_dir: Vector3 = (aim_point - projectile_origin).normalized()
 		_spawn_projectile(origin, dir)
 
 func _perform_single_pellet_hitscan(origin: Vector3, base_direction: Vector3, aim_basis: Basis) -> void:

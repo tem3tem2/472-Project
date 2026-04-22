@@ -14,13 +14,13 @@
 [ext_resource type="PackedScene" uid="uid://dr4kotf4rhy4d" path="res://scenes/settings.tscn" id="14_0ioq1"]
 [ext_resource type="Script" uid="uid://cmyp11vwojma0" path="res://scripts/demo/armory_weapon_spot.gd" id="14_theyi"]
 [ext_resource type="AudioStream" uid="uid://cts2vrg5emns3" path="res://Sounds/corrected gun shot.mp3" id="15_2ffn1"]
-[ext_resource type="Resource" uid="uid://bmuxbgc8rt5qc" path="res://config/Rifle_WW2.tres" id="15_4c783"]
 [ext_resource type="Script" uid="uid://cv7jxbtgf8ks6" path="res://scripts/weapons/weapon_config.gd" id="15_6mbcu"]
 [ext_resource type="AudioStream" uid="uid://bfgkuux3ivdj8" path="res://Sounds/gun-reload-2-395177.mp3" id="16_ioi6v"]
 [ext_resource type="PackedScene" uid="uid://b602os07io4m6" path="res://scenes/ORB Assets/SMG.glb" id="16_x5sna"]
 [ext_resource type="PackedScene" uid="uid://duxliptgoe22r" path="res://scenes/ORB Assets/ORB GUN.glb" id="18_2ffn1"]
+[ext_resource type="Resource" uid="uid://c1o5jp46gfeqk" path="res://GlockPreset.tres" id="19_jblhd"]
 [ext_resource type="PackedScene" uid="uid://b6c8ryj7rl7ay" path="res://scenes/ORB Assets/GLOCK.glb" id="20_ioi6v"]
-[ext_resource type="Resource" uid="uid://cs8po8cw76a0d" path="res://config/Rifle_MagicArcane.tres" id="21_jblhd"]
+[ext_resource type="Resource" uid="uid://defftg725q1f2" path="res://OrbPreset.tres" id="21_657iv"]
 [ext_resource type="PackedScene" path="res://scenes/demo/DebugOverlay.tscn" id="900_debug_overlay"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sky"]
@@ -55,7 +55,7 @@ reload_sfx = ExtResource("16_ioi6v")
 metadata/_custom_type_script = "uid://cv7jxbtgf8ks6"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_u3bh3"]
-size = Vector3(1.5, 2, 1.5)
+size = Vector3(2.2612915, 4.1134033, 2.1831055)
 
 [node name="FeelShowcase" type="Node3D" unique_id=730760541]
 script = ExtResource("7_feelshowcase")
@@ -226,7 +226,7 @@ transform = Transform3D(0.09773458, 9.251468e-10, 0.021164892, 0.021164892, -4.2
 [node name="GlockSpot" type="Area3D" parent="." unique_id=364721679]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.020917654, 0.40229523, -3.5)
 script = ExtResource("14_theyi")
-weapon_config = ExtResource("15_4c783")
+weapon_config = ExtResource("19_jblhd")
 display_name = "SMG"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GlockSpot" unique_id=230978912]
@@ -244,7 +244,7 @@ transform = Transform3D(0.1, 0, 0, 0, -4.371139e-09, -0.1, 0, 0.1, -4.371139e-09
 [node name="ORBSpot" type="Area3D" parent="." unique_id=1538922532]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7838826, 0.40229523, -3.5)
 script = ExtResource("14_theyi")
-weapon_config = ExtResource("21_jblhd")
+weapon_config = ExtResource("21_657iv")
 display_name = "ORB"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ORBSpot" unique_id=676260966]

@@ -4,7 +4,7 @@ signal hit(collider: Object, position: Vector3, normal: Vector3)
 
 @export var speed: float = 40.0
 @export var gravity_strength: float = 9.8  # Renamed from 'gravity' to avoid conflict with Area3D.gravity
-@export var max_lifetime: float = 3.0
+@export var max_lifetime: float = 8.0
 
 var _velocity: Vector3 = Vector3.ZERO
 var _age: float = 0.0

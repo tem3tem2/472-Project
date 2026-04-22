@@ -4,10 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://bi8opghjrednq" path="res://scenes/HUD.tscn" id="2_hud"]
 [ext_resource type="Script" uid="uid://bciaxbktnlitv" path="res://scripts/demo/ww2_bootcamp.gd" id="3_ww2bootcamp"]
 [ext_resource type="Script" uid="uid://cmyp11vwojma0" path="res://scripts/demo/armory_weapon_spot.gd" id="4_armoryspot"]
-[ext_resource type="Resource" uid="uid://bmuxbgc8rt5qc" path="res://config/Rifle_WW2.tres" id="5_rifleww2"]
 [ext_resource type="Resource" path="res://config/SMG_WW2.tres" id="6_smgww2"]
 [ext_resource type="Resource" path="res://config/Shotgun_WW2.tres" id="7_shotgunww2"]
 [ext_resource type="Script" uid="uid://bn1wlk0s83rsx" path="res://scripts/demo/bootcamp_course.gd" id="8_bootcampcourse"]
+[ext_resource type="Resource" uid="uid://c1o5jp46gfeqk" path="res://GlockPreset.tres" id="9_amirv"]
 [ext_resource type="PackedScene" path="res://scenes/TrainingTarget.tscn" id="9_trainingtarget"]
 [ext_resource type="Script" uid="uid://cvsn60ny1audc" path="res://scripts/demo/bootcamp_range.gd" id="10_bootcamprange"]
 [ext_resource type="Resource" path="res://config/Crosshair_WW2.tres" id="11_crosshairww2"]
@@ -252,7 +252,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_table")
 [node name="RifleSpot" type="Area3D" parent="Armory/WeaponSpots" unique_id=360529099]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 1, -3.5)
 script = ExtResource("4_armoryspot")
-weapon_config = ExtResource("5_rifleww2")
+weapon_config = ExtResource("9_amirv")
 display_name = "WW2 Bolt Rifle"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Armory/WeaponSpots/RifleSpot" unique_id=46839200]

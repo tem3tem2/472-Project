@@ -10,9 +10,9 @@
 script = ExtResource("1_weaponconfig")
 display_name = "SMG"
 damage = 20.0
-hip_spread = 3.5
-ads_spread = 1.2
-spread_increase_per_shot = 0.3
+hip_spread = 5.0
+ads_spread = 3.5
+spread_increase_per_shot = 0.99
 spread_decay_rate = 4.5
 recoil_pattern = Array[Vector2]([Vector2(0.3, -0.6), Vector2(-0.2, -0.5), Vector2(0.25, -0.4), Vector2(-0.15, -0.35)])
 muzzle_flash_scene = ExtResource("2_muzzleflash")

@@ -18,7 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://dtgkxgf3nfcim" path="res://scenes/ORB Assets/ORB center.glb" id="10_iw21x"]
 [ext_resource type="Script" uid="uid://b7q1t4kv2r6si" path="res://scenes/ORB!/lookat.gd" id="10_r03fp"]
 [ext_resource type="Material" uid="uid://bkvwjcdll6du5" path="res://materials/REFLECTIVE.tres" id="11_iqxoq"]
-[ext_resource type="Resource" uid="uid://irfchtkgy84f" path="res://config/Crosshair_Arcade.tres" id="14_7lkb8"]
+[ext_resource type="Resource" uid="uid://c74mj4wdqwdhq" path="res://config/Crosshair_Twitchy.tres" id="14_7lkb8"]
 [ext_resource type="PackedScene" uid="uid://dr4kotf4rhy4d" path="res://scenes/settings.tscn" id="20_16sg2"]
 [ext_resource type="PackedScene" uid="uid://brc4lttl1piek" path="res://scenes/Dummy.tscn" id="20_v51q2"]
 [ext_resource type="Resource" uid="uid://c1o5jp46gfeqk" path="res://GlockPreset.tres" id="21_7lkb8"]
@@ -294,6 +294,12 @@ surface_material_override/0 = ExtResource("9_iqxoq")
 [node name="HUD" parent="." unique_id=283320846 instance=ExtResource("5_jix0w")]
 crosshair_config = ExtResource("14_7lkb8")
 player_path = NodePath("../FeelPlayer")
+
+[node name="Crosshair" parent="HUD" index="1" unique_id=1108815402]
+offset_left = -1.0
+offset_top = 1.0
+offset_right = 31.0
+offset_bottom = 33.0
 
 [node name="ReflectionProbe" type="ReflectionProbe" parent="." unique_id=1307418398]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3409119, 7.921833, -0.6332779)

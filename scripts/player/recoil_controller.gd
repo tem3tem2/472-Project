@@ -122,3 +122,10 @@ func _process(delta: float) -> void:
 		_shake_offset = Vector3(sx, sy, 0.0)
 
 	position = _default_position + _shake_offset
+
+	# Snap to zero when recoil has fully decayed to prevent drift accumulation
+	var epsilon := 0.1
+	if _current_recoil.length() < epsilon and _target_recoil.length() < epsilon:
+		_current_recoil = Vector2.ZERO
+		_target_recoil = Vector2.ZERO
+		rotation = Vector3.ZERO  # hard reset the pivot's rotation
