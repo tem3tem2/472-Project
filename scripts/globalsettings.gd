@@ -6,6 +6,7 @@ const DEFAULT_ENV_PATH := "res://materials/new_environment.tres"
 var env: Environment
 var master_volume: float = 100.0
 var music_volume: float = 100.0
+var sfx_volume: float = 100.0
 var anti_aliasing: int = 0
 var render_scale: float = 1.0
 var upscaler: int = 0
@@ -35,6 +36,11 @@ func set_master_volume(v: float) -> void:
 func set_music_volume(v: float) -> void:
 	music_volume = v
 	_apply_bus("Music", v)
+	_save()
+	
+func set_sfx_volume(v: float) -> void:
+	sfx_volume = v
+	_apply_bus("SFX", v)
 	_save()
 
 func _apply_bus(bus_name: String, volume_0_100: float) -> void:

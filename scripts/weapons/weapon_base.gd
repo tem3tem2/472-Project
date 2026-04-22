@@ -485,6 +485,8 @@ func _play_sfx(stream: AudioStream) -> void:
 	var p := AudioStreamPlayer3D.new()
 
 	p.stream = stream
+	
+	p.bus = "SFX"
 
 	add_child(p)
 

@@ -13,9 +13,9 @@ class_name FeelHUD
 @onready var controls_label: Label = $ControlsLabel
 @onready var prompt_label: Label = $PromptLabel
 @onready var stats_panel: VBoxContainer = $StatsPanel
-@onready var stats_targets_label: Label = $StatsPanel/TargetsLabel
-@onready var stats_streak_label: Label = $StatsPanel/StreakLabel
-@onready var stats_accuracy_label: Label = $StatsPanel/AccuracyLabel
+@onready var stats_targets_label: Label = $TargetsLabel
+@onready var stats_streak_label: Label = $StreakLabel
+@onready var stats_accuracy_label: Label = $AccuracyLabel
 @onready var profile_label: Label = $ProfileLabel
 @onready var _title_label: Label = get_node_or_null("TitleLabel") as Label
 @onready var _block_tint: ColorRect = get_node_or_null("BlockTint") as ColorRect
@@ -319,18 +319,16 @@ func _update_stats_labels() -> void:
 		accuracy = float(_targets_hit) / float(_shots_fired) * 100.0
 
 	if stats_targets_label:
-		stats_targets_label.text = "Orbs Hit: %d" % _targets_hit
+		stats_targets_label.text = "Hit: %d" % _targets_hit
 		stats_targets_label.modulate = _get_targets_color(_targets_hit)
 
 	if stats_streak_label:
-		stats_streak_label.text = "Best Streak: %d" % _best_streak
+		stats_streak_label.text = "Best: %d" % _best_streak
 		stats_streak_label.modulate = _get_streak_color(_best_streak)
 
 	if stats_accuracy_label:
-		stats_accuracy_label.text = "Shots: %d  Accuracy: %d%%" % [
-			_shots_fired,
-			int(accuracy + 0.5)
-		]
+		stats_accuracy_label.text = "Accuracy: %d%%" %int(accuracy + 0.5)
+	
 		stats_accuracy_label.modulate = _get_accuracy_color(accuracy)
 
 func _apply_crosshair_config() -> void:

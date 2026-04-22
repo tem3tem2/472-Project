@@ -9,6 +9,14 @@ font = ExtResource("3_1etfg")
 font_size = 28
 font_color = Color(0.8653457, 0.42394587, 0.022501897, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1etfg"]
+bg_color = Color(0.18431373, 0.18431373, 0.18431373, 0.5176471)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 10
+
 [node name="HUD" type="Control" unique_id=283320846]
 layout_mode = 3
 anchors_preset = 15
@@ -120,6 +128,7 @@ wait_time = 0.15
 one_shot = true
 
 [node name="ControlsLabel" type="Label" parent="." unique_id=521318682]
+visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -135,17 +144,10 @@ horizontal_alignment = 1
 
 [node name="TitleLabel" type="Label" parent="." unique_id=71284834]
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -350.0
-offset_top = -32.0
-offset_right = -16.0
-offset_bottom = -8.0
-grow_horizontal = 0
-grow_vertical = 0
+offset_left = 810.0
+offset_top = 609.0
+offset_right = 1144.0
+offset_bottom = 639.0
 text = "ORB! 3D AIM TRAINER	"
 label_settings = SubResource("LabelSettings_7hsmw")
 horizontal_alignment = 2
@@ -186,7 +188,44 @@ grow_vertical = 0
 text = "BLOCK"
 vertical_alignment = 1
 
+[node name="Panel" type="Panel" parent="." unique_id=986811232]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -314.0
+offset_top = 5.0
+offset_right = -156.0
+offset_bottom = 45.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1etfg")
+
+[node name="Panel2" type="Panel" parent="." unique_id=606732038]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 156.0
+offset_top = 5.0
+offset_right = 314.0
+offset_bottom = 45.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1etfg")
+
+[node name="Panel3" type="Panel" parent="." unique_id=418819113]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150.95703
+offset_top = 5.0
+offset_right = 150.95703
+offset_bottom = 45.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1etfg")
+
 [node name="StatsPanel" type="VBoxContainer" parent="." unique_id=576042382]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.004
@@ -200,17 +239,33 @@ offset_bottom = -0.17599487
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TargetsLabel" type="Label" parent="StatsPanel" unique_id=1370276772]
-layout_mode = 2
-text = "Targets Hit: 0"
+[node name="TargetsLabel" type="Label" parent="." unique_id=1370276772]
+layout_mode = 0
+offset_left = 270.0
+offset_top = 10.0
+offset_right = 364.0
+offset_bottom = 40.0
+text = "Hit: 0"
 label_settings = ExtResource("2_fls4u")
 
-[node name="StreakLabel" type="Label" parent="StatsPanel" unique_id=1338098580]
-layout_mode = 2
-text = "Best Streak: 0"
+[node name="StreakLabel" type="Label" parent="." unique_id=1338098580]
+layout_mode = 0
+offset_left = 741.0
+offset_top = 10.0
+offset_right = 872.0
+offset_bottom = 40.0
+text = "Best: 0"
 label_settings = ExtResource("2_fls4u")
 
-[node name="AccuracyLabel" type="Label" parent="StatsPanel" unique_id=1353073327]
-layout_mode = 2
-text = "Shots: 0  Accuracy	: 0%"
+[node name="AccuracyLabel" type="Label" parent="." unique_id=1353073327]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -115.5
+offset_top = 10.0
+offset_right = 115.5
+offset_bottom = 40.0
+grow_horizontal = 2
+text = "Accuracy	: 0%"
 label_settings = ExtResource("2_fls4u")
