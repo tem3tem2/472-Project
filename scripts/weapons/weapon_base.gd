@@ -72,7 +72,10 @@ func _ready() -> void:
 		push_warning("WeaponBase has no WeaponConfig assigned.")
 
 		return
-
+	
+	if config != null:
+		apply_config(config)
+	
 	# Resolve optional muzzle node
 
 	if muzzle_node_path != NodePath():
@@ -193,6 +196,7 @@ func apply_config(new_config: WeaponConfig) -> void:
 			self.get_child(1).visible = false;
 			self.get_child(4).visible = false;
 			self.projectile_scene = null;
+			$Muzzle.position = Vector3(0.58, -0.4, -1)
 		"SMG":
 			print("Hello I am a SMG")
 			var SMG = self.get_child(1)
@@ -200,6 +204,7 @@ func apply_config(new_config: WeaponConfig) -> void:
 			self.get_child(0).visible = false;
 			self.get_child(4).visible = false;
 			self.projectile_scene = null;
+			$Muzzle.position = Vector3(0.55, -0.21, -1.1)
 		"ORB":
 			print("Hello I am a Orb")
 			var ORB = self.get_child(4)
@@ -210,7 +215,8 @@ func apply_config(new_config: WeaponConfig) -> void:
 			#self.projectile_scene = preload("res://scenes/ORB Assets/ORB BULLET.glb")
 		_:
 			print("Oh no")
-
+			
+			$Muzzle.position = Vector3(0.0, 0.0, -0.8)
 	if config.mag_size <= 0:
 
 		push_warning("WeaponBase.apply_config: mag_size <= 0, using default")
@@ -377,12 +383,20 @@ func _perform_single_pellet_hitscan(origin: Vector3, base_direction: Vector3, ai
 	
 	var result := space_state.intersect_ray(query)
 	
+	var tracer_start: Vector3 = origin
+	if _muzzle_node != null:
+		tracer_start = _muzzle_node.global_transform.origin
+		
 	if result.size() > 0:
 		var collider: Node = result.get("collider", null)
 		var hit_pos: Vector3 = result.get("position", Vector3.ZERO)
 		var hit_normal: Vector3 = result.get("normal", Vector3.UP)
 		# Always spawn impact effect for pellets - makes spread visible
 		_handle_hit(collider, hit_pos, hit_normal)
+		_spawn_tracer(tracer_start, hit_pos)
+	else:
+		# No hit — draw tracer to the max range endpoint
+		_spawn_tracer(tracer_start, to)
 
 func _start_reload() -> void:
 
@@ -600,3 +614,17 @@ func _spawn_projectile(origin: Vector3, direction: Vector3) -> void:
 
 func _on_projectile_hit(collider: Object, hit_position: Vector3, hit_normal: Vector3) -> void:
 	_handle_hit(collider, hit_position, hit_normal)
+
+func _spawn_tracer(from: Vector3, to: Vector3) -> void:
+	if config == null or config.tracer_scene == null:
+		return
+	var tracer := config.tracer_scene.instantiate() as Node3D
+	if tracer == null:
+		return
+	var root := get_tree().current_scene
+	if root:
+		root.add_child(tracer)
+	else:
+		add_child(tracer)
+	if tracer.has_method("configure"):
+		tracer.configure(from, to)

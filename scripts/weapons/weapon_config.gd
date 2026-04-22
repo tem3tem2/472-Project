@@ -72,7 +72,7 @@ enum FireMode { SEMI_AUTO, FULL_AUTO, BURST }
 
 @export var impact_effect_scene: PackedScene
 
-
+@export var tracer_scene: PackedScene
 
 @export var fire_sfx: AudioStream
 

@@ -13,7 +13,6 @@ emission = Color(1, 0.85, 0.4, 1)
 script = ExtResource("1_muzzle_script")
 
 [node name="FlashMesh" type="MeshInstance3D" parent="." unique_id=1419170097]
-visible = false
 mesh = SubResource("QuadMesh_flash")
 surface_material_override/0 = SubResource("Material_flash")
 

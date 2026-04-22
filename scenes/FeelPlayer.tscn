@@ -3,24 +3,24 @@
 [ext_resource type="Script" uid="uid://sp3f7srt6xbi" path="res://scripts/player/feel_player.gd" id="1_feelplayer"]
 [ext_resource type="Script" uid="uid://bc1opr2wq7aeu" path="res://scripts/player/weapon_rig.gd" id="2_weaponrig"]
 [ext_resource type="Script" uid="uid://boswtkdqtoomy" path="res://scripts/weapons/weapon_base.gd" id="3_weaponbase"]
-[ext_resource type="Resource" path="res://config/Rifle_Twitchy.tres" id="4_rifletwitchy"]
 [ext_resource type="Script" uid="uid://hc5pjjpfq33d" path="res://scripts/weapons/melee_weapon.gd" id="5_meleeweapon"]
 [ext_resource type="Resource" path="res://config/MeleeConfig.tres" id="6_meleeconfig"]
+[ext_resource type="Resource" uid="uid://c1o5jp46gfeqk" path="res://GlockPreset.tres" id="6_qpmc5"]
 [ext_resource type="Script" uid="uid://b3fmotur4wumq" path="res://scripts/player/recoil_controller.gd" id="7_recoilcontroller"]
-[ext_resource type="Material" path="res://materials/Wall_Default.tres" id="8_mi2qt"]
+[ext_resource type="Material" uid="uid://dk533dis3qmlg" path="res://materials/Wall_Default.tres" id="8_mi2qt"]
 [ext_resource type="PackedScene" path="res://scenes/weapons/RifleModel.tscn" id="8_riflemodel"]
 [ext_resource type="Material" uid="uid://dwiq5xgcho8c1" path="res://materials/Scratches002_2K-PNG.tres" id="8_u1fh5"]
 [ext_resource type="Resource" uid="uid://be3rnxu2gigv0" path="res://config/Feel_Default.tres" id="9_feeldefault"]
 [ext_resource type="Material" uid="uid://cbqa55y6q0dbd" path="res://materials/Leather026_2K-JPG.tres" id="9_jfv88"]
 [ext_resource type="PackedScene" uid="uid://duxliptgoe22r" path="res://scenes/ORB Assets/ORB GUN.glb" id="10_6job1"]
-[ext_resource type="Material" uid="uid://i4go668jgmuw" path="res://materials/Metal041A_2K-JPG.tres" id="10_6o8to"]
+[ext_resource type="Material" uid="uid://cyjsv1wtg6w2f" path="res://materials/Metal041A_2K-JPG.tres" id="10_6o8to"]
 [ext_resource type="PackedScene" uid="uid://b6c8ryj7rl7ay" path="res://scenes/ORB Assets/GLOCK.glb" id="10_wubtv"]
 [ext_resource type="Material" uid="uid://bkvwjcdll6du5" path="res://materials/REFLECTIVE.tres" id="11_glxqr"]
 [ext_resource type="PackedScene" uid="uid://b602os07io4m6" path="res://scenes/ORB Assets/SMG.glb" id="11_trg0v"]
 [ext_resource type="PackedScene" uid="uid://cmbs6yf7inhwx" path="res://scenes/ORB Assets/ORB BULLET.glb" id="11_upgtb"]
 [ext_resource type="Material" uid="uid://6uxelyvnw2gm" path="res://materials/Plastic017A_2K-JPG.tres" id="12_k72su"]
 [ext_resource type="Material" uid="uid://bdtidggxhb0nf" path="res://materials/Fabric004_2K-JPG.tres" id="14_qpmc5"]
-[ext_resource type="Material" path="res://materials/Fireball_Material.tres" id="15_g342x"]
+[ext_resource type="Material" uid="uid://twn7mvppy1ns" path="res://materials/Fireball_Material.tres" id="15_g342x"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_player"]
 radius = 0.5175781
@@ -57,14 +57,14 @@ active_weapon = NodePath("Weapon")
 
 [node name="Weapon" type="Node3D" parent="RecoilPivot/Camera3D/WeaponRig" unique_id=366159198]
 script = ExtResource("3_weaponbase")
-config = ExtResource("4_rifletwitchy")
+config = ExtResource("6_qpmc5")
 muzzle_node_path = NodePath("Muzzle")
 aim_node_path = NodePath("../..")
 
 [node name="GLOCK" parent="RecoilPivot/Camera3D/WeaponRig/Weapon" unique_id=1989960064 instance=ExtResource("10_wubtv")]
 transform = Transform3D(-6.5567085e-09, -0.15, 6.5567085e-09, 0, -6.5567085e-09, -0.15, 0.15, -6.5567085e-09, 2.8660284e-16, 0.7666007, -0.3592031, 0.025742173)
 
-[node name="Cube_001" parent="RecoilPivot/Camera3D/WeaponRig/Weapon/GLOCK" index="0" unique_id=970632921]
+[node name="Cube_001" parent="RecoilPivot/Camera3D/WeaponRig/Weapon/GLOCK" index="0" unique_id=1574227304]
 transform = Transform3D(0.99999976, 0, -2.1175824e-22, 0, 0.99999976, -8.351869e-23, -2.1175824e-22, -8.35187e-23, 0.99999976, -1.7164207, 2.4273882, 0)
 surface_material_override/0 = ExtResource("8_mi2qt")
 surface_material_override/1 = ExtResource("9_jfv88")
@@ -75,7 +75,7 @@ surface_material_override/4 = ExtResource("8_u1fh5")
 transform = Transform3D(-0.0002277717, 0.14999983, -6.556701e-09, 0, -6.5567085e-09, -0.15, -0.14999983, -0.0002277717, 9.956369e-12, 0.3508313, -0.20060325, 0.4)
 visible = false
 
-[node name="Cube_016" parent="RecoilPivot/Camera3D/WeaponRig/Weapon/SMG" index="0" unique_id=27789043]
+[node name="Cube_016" parent="RecoilPivot/Camera3D/WeaponRig/Weapon/SMG" index="0" unique_id=1467301246]
 transform = Transform3D(0.23665698, 0, 2.1684043e-18, 3.2014214e-10, 0.09843783, 2.784985e-16, -1.0408341e-17, 1.6249031e-15, 0.08976448, 3.3122568, 0.3371122, 0)
 surface_material_override/0 = ExtResource("8_u1fh5")
 surface_material_override/1 = ExtResource("8_u1fh5")
@@ -101,7 +101,7 @@ visible = false
 [node name="ORB GUN" parent="RecoilPivot/Camera3D/WeaponRig/Weapon" unique_id=976118165 instance=ExtResource("10_6job1")]
 transform = Transform3D(-6.5567085e-09, -0.15, 6.5567085e-09, 0, -6.5567085e-09, -0.15, 0.15, -6.5567085e-09, 2.8660284e-16, 0.5920028, -0.13005829, -1.2187462)
 
-[node name="Sphere" parent="RecoilPivot/Camera3D/WeaponRig/Weapon/ORB GUN" index="0" unique_id=1253759616]
+[node name="Sphere" parent="RecoilPivot/Camera3D/WeaponRig/Weapon/ORB GUN" index="0" unique_id=1884659628]
 transform = Transform3D(9.9177576e-08, 4.9588795e-08, 1.6639239, 1.6639239, 4.9588788e-08, -9.917757e-08, -4.9588785e-08, 1.6639239, -4.9588774e-08, -1.7164192, 0.6144786, 2.428648)
 visible = false
 surface_material_override/0 = ExtResource("11_glxqr")
@@ -111,7 +111,7 @@ surface_material_override/1 = ExtResource("12_k72su")
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -0.1525693, -0.2106204, -1.29788)
 visible = false
 
-[node name="Orb" parent="RecoilPivot/Camera3D/WeaponRig/Weapon/ORB BULLET" index="0" unique_id=1170909365]
+[node name="Orb" parent="RecoilPivot/Camera3D/WeaponRig/Weapon/ORB BULLET" index="0" unique_id=1198295401]
 transform = Transform3D(-1.501044, 0, 0, 0, -1.501044, 0, 0, 0, -1.501044, -11.692455, 2.731884, -5.1492615)
 surface_material_override/0 = SubResource("StandardMaterial3D_glxqr")
 

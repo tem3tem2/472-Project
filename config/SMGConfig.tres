@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" path="res://scenes/vfx/ImpactEffect.tscn" id="3_impacteffect"]
 [ext_resource type="AudioStream" uid="uid://cts2vrg5emns3" path="res://Sounds/corrected gun shot.mp3" id="4_firesfx"]
 [ext_resource type="AudioStream" uid="uid://bfgkuux3ivdj8" path="res://Sounds/gun-reload-2-395177.mp3" id="5_reloadsfx"]
+[ext_resource type="PackedScene" uid="uid://fxw23sodyecs" path="res://scenes/vfx/BulletTracer.tscn" id="6_e13cf"]
 
 [resource]
 script = ExtResource("1_weaponconfig")
@@ -17,5 +18,6 @@ spread_decay_rate = 4.5
 recoil_pattern = Array[Vector2]([Vector2(0.3, -0.6), Vector2(-0.2, -0.5), Vector2(0.25, -0.4), Vector2(-0.15, -0.35)])
 muzzle_flash_scene = ExtResource("2_muzzleflash")
 impact_effect_scene = ExtResource("3_impacteffect")
+tracer_scene = ExtResource("6_e13cf")
 fire_sfx = ExtResource("4_firesfx")
 reload_sfx = ExtResource("5_reloadsfx")

@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://fxw23sodyecs"]
+
+[ext_resource type="Script" uid="uid://ddwngax3qmglm" path="res://scenes/vfx/bullet_tracer.gd" id="1_gkjla"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_gkjla"]
+size = Vector3(0.02, 0.02, 1)
+
+[node name="BulletTracer" type="Node3D" unique_id=1621848888]
+script = ExtResource("1_gkjla")
+
+[node name="BeamMesh" type="MeshInstance3D" parent="." unique_id=658597930]
+mesh = SubResource("BoxMesh_gkjla")
