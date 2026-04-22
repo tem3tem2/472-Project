@@ -231,7 +231,10 @@ custom_minimum_size = Vector2(232.45, 40.65)
 custom_minimum_size = Vector2(147.1, 40)
 
 [node name="Label" parent="SettingsBG/ScrollContainer/VBoxContainer/SSAOContainer" parent_id_path=PackedInt32Array(1297866643, 588973514) index="0" unique_id=118802307]
-custom_minimum_size = Vector2(311.14, 40.925)
+custom_minimum_size = Vector2(0, 40.925)
+
+[node name="SSAOCheckButton" parent="SettingsBG/ScrollContainer/VBoxContainer/SSAOContainer" parent_id_path=PackedInt32Array(1297866643, 588973514) index="1" unique_id=2025172649]
+custom_minimum_size = Vector2(302.365, 0)
 
 [node name="Label" parent="SettingsBG/ScrollContainer/VBoxContainer/BloomContainer" parent_id_path=PackedInt32Array(1297866643, 452008536) index="0" unique_id=2045537869]
 custom_minimum_size = Vector2(0, 40.855)
@@ -251,9 +254,10 @@ theme_override_icons/unchecked = SubResource("CompressedTexture2D_i6lef")
 
 [node name="Label" parent="SettingsBG/ScrollContainer/VBoxContainer/SDFGIContainer" parent_id_path=PackedInt32Array(1297866643, 1044441966) index="0" unique_id=2078051537]
 custom_minimum_size = Vector2(0, 40.67)
+text = "SDFGI - Lighting"
 
 [node name="SDFGICheckButton" parent="SettingsBG/ScrollContainer/VBoxContainer/SDFGIContainer" parent_id_path=PackedInt32Array(1297866643, 1044441966) index="1" unique_id=1056241754]
-custom_minimum_size = Vector2(127.48, 0)
+custom_minimum_size = Vector2(130.48, 0)
 theme_override_icons/checked = SubResource("CompressedTexture2D_70i5f")
 theme_override_icons/unchecked = SubResource("CompressedTexture2D_mj5lg")
 
