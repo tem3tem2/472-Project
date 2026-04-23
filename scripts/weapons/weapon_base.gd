@@ -194,7 +194,7 @@ func apply_config(new_config: WeaponConfig) -> void:
 			var Glock = self.get_child(0)
 			Glock.visible = true;
 			self.get_child(1).visible = false;
-			self.get_child(4).visible = false;
+			self.get_child(3).visible = false;
 			self.projectile_scene = null;
 			$Muzzle.position = Vector3(0.58, -0.4, -1)
 		"SMG":
@@ -202,12 +202,12 @@ func apply_config(new_config: WeaponConfig) -> void:
 			var SMG = self.get_child(1)
 			SMG.visible = true;
 			self.get_child(0).visible = false;
-			self.get_child(4).visible = false;
+			self.get_child(3).visible = false;
 			self.projectile_scene = null;
 			$Muzzle.position = Vector3(0.55, -0.21, -1.1)
 		"ORB":
 			print("Hello I am a Orb")
-			var ORB = self.get_child(4)
+			var ORB = self.get_child(3)
 			ORB.visible = true;
 			self.get_child(0).visible = false;
 			self.get_child(1).visible = false;

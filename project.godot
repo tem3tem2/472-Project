@@ -24,7 +24,6 @@ config/name="472Project"
 config/version="v0.4.0"
 run/main_scene="uid://c7cd3p3uaswc5"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="uid://ddmk4g0apc6gy"
 
 [audio]
 

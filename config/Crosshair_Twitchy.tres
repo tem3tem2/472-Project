@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_crosshairconfig")
-max_size = 24.0
+max_size = 50.0
 spread_weight = 0.8
 movement_weight = 0.2
 smooth_speed = 20.0
