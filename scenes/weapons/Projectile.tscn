@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b6dud5s8o1ejl"]
 
 [ext_resource type="Script" uid="uid://ddxjm3wcxl2ay" path="res://scripts/weapons/projectile.gd" id="1_projectile"]
-[ext_resource type="Material" path="res://materials/Fireball_Material.tres" id="2_fireball_material"]
+[ext_resource type="Material" uid="uid://twn7mvppy1ns" path="res://materials/Fireball_Material.tres" id="2_fireball_material"]
 [ext_resource type="AudioStream" uid="uid://cwtfly5i5iiop" path="res://Sounds/fireball-whoosh-2-179126.mp3" id="3_cast_sfx"]
 [ext_resource type="AudioStream" uid="uid://cxp08itwlqrkq" path="res://Sounds/fireball-impact-351961.mp3" id="4_impact_sfx"]
 [ext_resource type="PackedScene" uid="uid://cmbs6yf7inhwx" path="res://scenes/ORB Assets/ORB BULLET.glb" id="5_v55ij"]
@@ -49,14 +49,16 @@ process_material = SubResource("ParticleProcessMaterial_trail")
 
 [node name="CastSfx" type="AudioStreamPlayer3D" parent="." unique_id=756425170]
 stream = ExtResource("3_cast_sfx")
+bus = &"SFX"
 
 [node name="ImpactSfx" type="AudioStreamPlayer3D" parent="." unique_id=2020544190]
 stream = ExtResource("4_impact_sfx")
+bus = &"SFX"
 
 [node name="ORB BULLET" parent="." unique_id=888144571 instance=ExtResource("5_v55ij")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0.5852606, -0.14022435, 0.25914496)
 
-[node name="Orb" parent="ORB BULLET" index="0" unique_id=1170909365]
+[node name="Orb" parent="ORB BULLET" index="0" unique_id=1198295401]
 transform = Transform3D(-1.501044, 0, 0, 0, -1.501044, 0, 0, 0, -1.501044, -11.692455, 2.731884, -5.1492615)
 surface_material_override/0 = SubResource("StandardMaterial3D_tq0wo")
 

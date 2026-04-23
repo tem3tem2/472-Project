@@ -17,12 +17,13 @@ func configure(start: Vector3, direction: Vector3) -> void:
 	global_position = start
 	_velocity = direction.normalized() * speed
 	_age = 0.0
-
-
-func _ready() -> void:
+	
 	# Play cast sound when projectile spawns
 	if _cast_sfx and _cast_sfx.stream:
 		_cast_sfx.play()
+
+func _ready() -> void:
+	pass
 
 
 func _physics_process(delta: float) -> void:
@@ -69,6 +70,7 @@ func _physics_process(delta: float) -> void:
 		if _impact_sfx and _impact_sfx.stream and scene:
 			var player := AudioStreamPlayer3D.new()
 			player.stream = _impact_sfx.stream
+			player.bus = "SFX"
 			scene.add_child(player)
 			# Set position after adding to scene tree (required for global_transform)
 			player.global_transform.origin = pos

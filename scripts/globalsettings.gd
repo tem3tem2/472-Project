@@ -20,6 +20,7 @@ func _ready() -> void:
 	_load()
 	set_master_volume(master_volume)
 	set_music_volume(music_volume)
+	set_sfx_volume(sfx_volume)
 	set_anti_aliasing(anti_aliasing)
 	set_render_scale(render_scale)
 	set_upscaler(upscaler)
@@ -107,6 +108,7 @@ func _save() -> void:
 	var cfg := ConfigFile.new()
 	cfg.set_value("audio", "master_volume", master_volume)
 	cfg.set_value("audio", "music_volume", music_volume)
+	cfg.set_value("audio", "sfx_volume", sfx_volume)
 	cfg.set_value("graphics", "anti_aliasing", anti_aliasing)
 	cfg.set_value("graphics", "render_scale", render_scale)
 	cfg.set_value("graphics", "upscaler", upscaler)
@@ -122,6 +124,7 @@ func _load() -> void:
 		return
 	master_volume = cfg.get_value("audio", "master_volume", master_volume)
 	music_volume = cfg.get_value("audio", "music_volume", music_volume)
+	sfx_volume = cfg.get_value("audio", "sfx_volume", sfx_volume)
 	anti_aliasing = cfg.get_value("graphics", "anti_aliasing", anti_aliasing)
 	render_scale = cfg.get_value("graphics", "render_scale", render_scale)
 	upscaler = cfg.get_value("graphics", "upscaler", upscaler)
